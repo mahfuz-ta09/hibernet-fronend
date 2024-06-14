@@ -1,0 +1,146 @@
+.top-rated-container{
+    background-color: #d7d7d8;
+    clip-path: polygon(0 0,100% 20%,100% 100%,0 80%);
+    margin: 50px 0;
+}
+
+
+.ratedCourse-holder{
+    max-width: 1300px;
+    margin: 10px auto;
+    width: 100%;
+    height: auto;
+    padding: 130px 10px;
+    position: relative;
+}
+
+.ratedCourse-header{
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+}
+
+.ratedCourse-header h1{
+    font-size: 35px;
+    line-height: 35px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.ratedCourse-header p{
+    font-size:   15px;
+    line-height: 20px;
+}
+
+.ratedCard-holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    box-sizing: border-box;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.courseCard-details{
+    width: 340px;
+    height: 420px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: space-between;
+    border: none;
+    border-radius: 5px;
+    box-shadow:  5px 5px 10px #88898a;
+}
+
+.courseCard-details:hover{
+    box-shadow:  10px 10px 10px #fff;
+    transition: .5s all;
+}
+
+.courseCard-details img{
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+}
+
+.courseCard-data{
+    width: 100%;
+    padding: 10px;
+}
+
+.courseCard-data h1{
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 600;
+}
+
+.courseCard-data h2{
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.courseCard-addition{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    padding: 15px 0;
+}
+
+.courseCard-addition h3{
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.courseCard-addition h3 span{
+    color: #4E342E;
+    font-weight: 600;
+}
+
+.courseCard-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+    gap: 5px;
+}
+
+.button-1{
+    padding: 7px 40px;
+    border: 1px solid #4E342E;
+    background-color: #4E342E;
+    color: white;
+    border-radius: 5px;
+}
+
+.button-2{
+    padding: 7px 40px;
+    border: 1px solid #4E342E;
+    background-color: transparent;
+    color: #4E342E;
+    border-radius: 5px;
+}
+
+.see-btn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+
+.seemore{
+    padding: 7px 60px;
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
+    font-weight: 700;
+    border-radius: 5px;
+}

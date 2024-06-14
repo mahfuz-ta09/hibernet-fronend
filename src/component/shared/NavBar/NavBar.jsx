@@ -16,10 +16,10 @@ const NavBar = () => {
             {isOpen === true ? <MdCancel onClick={()=>setIsOpen(!isOpen)} className='nav-btn-icon' />: <HiMiniBars3BottomRight onClick={()=>setIsOpen(!isOpen)} className='nav-btn-icon' />}
                 <ul className={isOpen === true ? 'nav-item show' : 'nav-item hide'}>
                     <Link className='link' href="/" >Home</Link>
-                    <Link className='link' href="/" >Courses</Link>
-                    <Link className='link' href="/" >Blog</Link>
-                    <Link className='link' href="/" >About</Link>
-                    <Link className='link' href="/" >DashBoard</Link>
+                    <Link className='link' href="/courses" >Courses</Link>
+                    <Link className='link' href="/blogs" >Blogs</Link>
+                    <Link className='link' href="/about" >About</Link>
+                    <Link className='link' href="/dashboard" >DashBoard</Link>
                     <Link className='link' href="/login">Log In</Link>
                 </ul>
         </div>

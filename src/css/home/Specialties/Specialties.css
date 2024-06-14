@@ -1,0 +1,86 @@
+.specialities-holder{
+    max-width: 1300px;
+    margin: 50px auto;
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.specialities-header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.specialities-header h1{
+    font-size: 45px;
+    line-height: 45px;
+    font-weight: 700;
+    color: #343c97;
+}
+
+
+.specialities-header h2{
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 400;
+    color: black;
+}
+
+.specilties-card{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin: 30px 0;
+}
+
+.card-sp{
+    width:  150px;
+    height: 150px;
+    background: #dbdbdb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 2px solid #dbdbdb;
+    gap: 10px;
+}
+
+.card-sp img{
+    width:  70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.card-sp h1{
+    color: black;
+    font-weight: 700;
+}
+
+.specialities-holder button{
+    padding: 9px 39px;
+    font-weight: 700;
+    border: 2px solid #343c97;
+    color:#343c97;
+    border-radius: 5px;
+}
+
+.card-sp:hover{
+    border: 2px solid #343c97;
+    transition: .5s;
+}
+
+@media screen and (max-width:450px) {
+    .specialities-holder{
+        padding: 10px;
+    }
+    
+}

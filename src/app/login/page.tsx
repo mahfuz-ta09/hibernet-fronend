@@ -10,7 +10,7 @@ const LoginPage = () => {
           <div className="login-content">
               <div className="login-content-item">
                   <h1 className="">Log in</h1>
-                  <p className="">Log in to your account to upload or download pictures, videos or music.</p>
+                  <p className="">Log in to your account to access your content</p>
                   <div className="input-container">
                       <input placeholder="enter your email" className=""/>
                       <input placeholder="enter your password" className=""/>
@@ -24,7 +24,7 @@ const LoginPage = () => {
                           <button className="">facebook</button>
                           <button className="">google</button>
                   </div>
-                  <Link className='forgot-link underline' href="">Don't have account?sign up</Link>
+                  <Link className='forgot-link underline' href="/signup">Don't have account? sign up</Link>
               </div>
               <div className='image-conteiner'>
                 <img src={bgImg.src} className=""/>

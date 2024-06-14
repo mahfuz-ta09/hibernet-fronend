@@ -1,5 +1,5 @@
 .login-container{
-    background: #73AB84;
+    background: #343c97;
     height: 100vh;
     width: 100vw;
 }
@@ -87,12 +87,12 @@
 }
 
 .forgot-link{
-    color: #73AB84;
+    color: #343c97;
 }
 
 .form-link button{
     padding: 10px 29px;
-    background: #73AB84;
+    background: #343c97;
     color: white;
     border-radius: 3px;
 }
@@ -113,7 +113,7 @@
 .social-login button{
     width: fit-content;
     padding: 8px 29px;
-    background: #73AB84;
+    background: #343c97;
     color: white;
     border-radius: 2px;
 } 

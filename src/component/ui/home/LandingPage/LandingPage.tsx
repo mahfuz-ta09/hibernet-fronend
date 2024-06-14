@@ -1,6 +1,6 @@
 "use client"
-import { RefObject, useEffect, useRef, useState } from 'react'
-import '../../../css/LandingPage/LandingPage.css'
+import { RefObject , useRef } from 'react'
+import '../../../../css/home/LandingPage/LandingPage.css'
 import { FaArrowAltCircleRight } from "react-icons/fa"
 import { FaArrowAltCircleLeft } from "react-icons/fa"
 
@@ -96,7 +96,6 @@ const LandingPage = () => {
 
             <div ref={thmbRef} className="thumbnail">
                 {
-                    // banner.filter(images => images.id !== current).sort().map(item => (
                     banner.map(item => (
                         <div key={item.id} className="thumbnail-image-container">
                             <img className='thumbnail-image' src={item.url} alt="" />
