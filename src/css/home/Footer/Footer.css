@@ -1,0 +1,63 @@
+.footer-container{
+    text-align: center;
+    color: white;
+    background: #343c97;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+
+.container-1{
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.sign-inoption{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-inoption span{
+    margin-right: 20px;
+}
+
+
+.sign-inoption button{
+    border-radius: 9999px;
+    border-width: 2px;
+    border-color: #fafafa;
+    padding: 9px 19px;
+    font-size: 0.75rem; 
+    font-weight: 500; 
+    text-transform: uppercase;
+    line-height: normal;
+    color: #fafafa;
+    transition: border-color 150ms ease-in-out, background-color 150ms ease-in-out, color 150ms ease-in-out;
+}
+
+.sign-inoption button:hover {
+    border-color: #f5f5f5;
+    background-color: rgba(115, 115, 115, 0.1);
+    color: #f5f5f5;
+  }
+  
+  .sign-inoption button:focus {
+    border-color: #f5f5f5;
+    color: #f5f5f5;
+    outline: none;
+    box-shadow: none;
+  }
+  
+  .sign-inoption button:active {
+    border-color: #e0e0e0;
+    color: #e0e0e0;
+  }
+  
+  .sign-inoption button:hover {
+    background-color: rgba(240, 240, 240, 0.1);
+  }

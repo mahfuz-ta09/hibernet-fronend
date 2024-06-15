@@ -14,7 +14,7 @@ const TopRatedCourse = () => {
                 <div className='ratedCard-holder'> 
                     {
                         toprated?.map((top:any)=>(
-                            <div className='courseCard-details'> 
+                            <div key={top?.id} className='courseCard-details'> 
                                 <img src={top?.profilePhoto} alt="" />
                                 <div className='courseCard-data'>
                                     <h1>{top?.name}</h1>

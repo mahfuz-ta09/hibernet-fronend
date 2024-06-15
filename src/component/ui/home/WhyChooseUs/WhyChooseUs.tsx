@@ -1,6 +1,12 @@
+
+import Image from 'next/image'
 import '../../../../css/home/WhyChooseUs/WhyChooseUs.css'
+import im from '../../../../../public/assets/login-page.jpeg'
 
 const WhyChooseUs = () => {
+
+    console.log(im)
+
     return (
         <div className='wcu-container'>
             <div className="wcu-holder">
@@ -37,7 +43,7 @@ const WhyChooseUs = () => {
                                 <img src="https://media.istockphoto.com/id/1151630200/photo/gold-cup-isolated-on-white-background.jpg?s=1024x1024&w=is&k=20&c=iBxCGA1lVPgxq9NYKyhhDIFivA5nKtWgFpmUkDssGeI=" alt="" />
                             </div>
                             <div className="our-point-txt">
-                                <h1>Lorem, ipsum dolor.</h1>
+                                <h1>Vast collection of courses</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, quod.</p>
                             </div>
                         </div>
@@ -47,12 +53,12 @@ const WhyChooseUs = () => {
                                 <img src="https://media.istockphoto.com/id/1151630200/photo/gold-cup-isolated-on-white-background.jpg?s=1024x1024&w=is&k=20&c=iBxCGA1lVPgxq9NYKyhhDIFivA5nKtWgFpmUkDssGeI=" alt="" />
                             </div>
                             <div className="our-point-txt">
-                                <h1>Lorem, ipsum dolor.</h1>
+                                <h1>fully virtual education system.</h1>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, quod.</p>
                             </div>
                         </div>
                     </div>
-                    <img className="point-bnr-img" src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg" alt="" />
+                    <Image className="point-bnr-img" src={im} alt='' />
                 </div>
             </div>
         </div>
