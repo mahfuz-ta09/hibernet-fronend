@@ -7,12 +7,12 @@
     justify-content: center;
     flex-direction: column;
     gap: 30px;
-    padding: 20px;
 }
 
 .container-1{
     padding: 20px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 .sign-inoption{
@@ -60,4 +60,15 @@
   
   .sign-inoption button:hover {
     background-color: rgba(240, 240, 240, 0.1);
+  }
+
+  /* p-4 text-center bg-black bg-opacity-20 */
+
+  .container-2{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: #000;
+    opacity: .6;
+    color: white;
   }

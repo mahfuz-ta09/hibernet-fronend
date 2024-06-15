@@ -16,12 +16,12 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* <!--Copyright section--> */}
+
                 <div
-                    className="p-4 text-center bg-black bg-opacity-20">
-                    © 2023 Copyright:
-                    <a className="text-white" href="https://tw-elements.com/"
-                    >TW Elements</a>
+                    className="container-2">
+                    © 2024 Copyright:
+                    <a href="/"
+                    >Hiber-net edu</a>
                 </div>
             </div>
     )
