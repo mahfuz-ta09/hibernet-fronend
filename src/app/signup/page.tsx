@@ -16,13 +16,13 @@ const SignUpPage = () => {
                         <input placeholder="enter your email" className=""/>
                         <input placeholder="enter your password" className=""/>
                         <div className="form-link">
-                            <button className="">next</button>
+                            <button>next</button>
                         </div>
                     </div>
                     <Link className='forgot-link underline' href="/login">Already have an account? login</Link>
                 </div>
                 <div className='image-conteiner'>
-                    <Image src={bgImg} className="" alt=""/>
+                    <Image src={bgImg}  alt=""/>
                 </div>
             </div>
             </div>
