@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import '../../../../css/home/Specialties/Specialties.css'
 
 
@@ -21,7 +22,7 @@ const Specialties = () => {
                 {
                     specialties?.map((specialty: spType) =>(
                         <div className="card-sp" key={specialty?.id}>
-                            <img src={specialty?.icon} alt="" />
+                            <Image src={specialty?.icon} alt="" />
                             <h1>{specialty?.title}</h1>
                         </div>
                     ))

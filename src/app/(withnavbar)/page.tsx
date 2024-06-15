@@ -8,7 +8,6 @@ import WhyChooseUs from "@/component/ui/home/WhyChooseUs/WhyChooseUs"
 const page = () => {
   return (
     <>
-        {/* <Banner /> */}
         <LandingPage />
         <Specialties />
         <TopRatedCourse />

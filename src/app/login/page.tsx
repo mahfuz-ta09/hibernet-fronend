@@ -25,7 +25,7 @@ const LoginPage = () => {
                           <button className="">facebook</button>
                           <button className="">google</button>
                   </div>
-                  <Link className='forgot-link underline' href="/signup">Don't have account? sign up</Link>
+                  <Link className='forgot-link underline' href="/signup">Do not have account? sign up</Link>
               </div>
               <div className='image-conteiner'>
                 <Image src={bgImg} className="" alt=''/>
