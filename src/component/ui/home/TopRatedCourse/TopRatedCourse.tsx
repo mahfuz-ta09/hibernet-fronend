@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import '../../../../css/home/TopRatedCourse/TopRatedCourse.css'
 
 const TopRatedCourse = () => {
@@ -15,7 +16,7 @@ const TopRatedCourse = () => {
                     {
                         toprated?.map((top:any)=>(
                             <div key={top?.id} className='courseCard-details'> 
-                                <img src={top?.profilePhoto} alt="" />
+                                <Image src={top?.profilePhoto} alt="" />
                                 <div className='courseCard-data'>
                                     <h1>{top?.name}</h1>
                                     <h2>{top?.qualification}, {top?.designation}</h2>

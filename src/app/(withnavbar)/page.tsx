@@ -1,4 +1,3 @@
-import Banner from "@/component/ui/Banner/Banner"
 import Footer from "@/component/ui/home/Footer/Footer"
 import LandingPage from "@/component/ui/home/LandingPage/LandingPage"
 import Specialties from "@/component/ui/home/Specialties/Specialties"

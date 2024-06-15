@@ -3,6 +3,7 @@ import { RefObject , useRef } from 'react'
 import '../../../../css/home/LandingPage/LandingPage.css'
 import { FaArrowAltCircleRight } from "react-icons/fa"
 import { FaArrowAltCircleLeft } from "react-icons/fa"
+import Image from 'next/image'
 
 
 
@@ -88,7 +89,7 @@ const LandingPage = () => {
                                 <p>{item.addition}</p>
                                 <button>SEE MORE</button>
                             </div>
-                            <img className='banner-image' src={item.url} alt="" />
+                            <Image src={item.url}  className='banner-image' width={1000} height={700} alt="" />
                         </div>
                     ))
                 }
@@ -98,7 +99,7 @@ const LandingPage = () => {
                 {
                     banner.map(item => (
                         <div key={item.id} className="thumbnail-image-container">
-                            <img className='thumbnail-image' src={item.url} alt="" />
+                            <Image  src={item.url} className='thumbnail-image' width={150} height={220} alt="" />
                         </div>
                     ))
                 }

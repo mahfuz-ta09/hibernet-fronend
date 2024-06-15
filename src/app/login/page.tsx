@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import '../../css/Login/Login.css'
 import bgImg from '../../../public/assets/log.webp'
+import Image from 'next/image'
 
 
 const LoginPage = () => {
@@ -27,7 +28,7 @@ const LoginPage = () => {
                   <Link className='forgot-link underline' href="/signup">Don't have account? sign up</Link>
               </div>
               <div className='image-conteiner'>
-                <img src={bgImg.src} className=""/>
+                <Image src={bgImg} className="" alt=''/>
               </div>
           </div>
         </div>

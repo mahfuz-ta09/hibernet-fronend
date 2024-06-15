@@ -2,10 +2,10 @@
 import Image from 'next/image'
 import '../../../../css/home/WhyChooseUs/WhyChooseUs.css'
 import im from '../../../../../public/assets/login-page.jpeg'
+import trophy from '../../../../../public/assets/trophy.jpg'
 
 const WhyChooseUs = () => {
 
-    console.log(im)
 
     return (
         <div className='wcu-container'>
@@ -20,7 +20,7 @@ const WhyChooseUs = () => {
                         
                         <div className="our-point-card-1">
                             <div className="point-img">
-                                <img src="https://media.istockphoto.com/id/1151630200/photo/gold-cup-isolated-on-white-background.jpg?s=1024x1024&w=is&k=20&c=iBxCGA1lVPgxq9NYKyhhDIFivA5nKtWgFpmUkDssGeI=" alt="" />
+                                <Image className='' src={trophy} alt="" />
                             </div>
                             <div className="our-point-txt">
                                 <h1>24/7 Support</h1>
@@ -30,7 +30,7 @@ const WhyChooseUs = () => {
                         
                         <div className="our-point-card-2">
                             <div className="point-img">
-                                <img src="https://media.istockphoto.com/id/1151630200/photo/gold-cup-isolated-on-white-background.jpg?s=1024x1024&w=is&k=20&c=iBxCGA1lVPgxq9NYKyhhDIFivA5nKtWgFpmUkDssGeI=" alt="" />
+                                <Image className='' src={trophy} alt="" />
                             </div>
                             <div className="our-point-txt">
                                 <h1>Expert teachers panel</h1>
@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
                         
                         <div className="our-point-card-1">
                             <div className="point-img">
-                                <img src="https://media.istockphoto.com/id/1151630200/photo/gold-cup-isolated-on-white-background.jpg?s=1024x1024&w=is&k=20&c=iBxCGA1lVPgxq9NYKyhhDIFivA5nKtWgFpmUkDssGeI=" alt="" />
+                                <Image className='' src={trophy} alt="" />
                             </div>
                             <div className="our-point-txt">
                                 <h1>Vast collection of courses</h1>
@@ -50,7 +50,7 @@ const WhyChooseUs = () => {
 
                         <div className="our-point-card-2">
                             <div className="point-img">
-                                <img src="https://media.istockphoto.com/id/1151630200/photo/gold-cup-isolated-on-white-background.jpg?s=1024x1024&w=is&k=20&c=iBxCGA1lVPgxq9NYKyhhDIFivA5nKtWgFpmUkDssGeI=" alt="" />
+                                <Image className='' src={trophy} alt="" />
                             </div>
                             <div className="our-point-txt">
                                 <h1>fully virtual education system.</h1>
