@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import '../../../../css/home/Footer/Footer.css'
 
 const Footer = () => {
@@ -7,11 +8,12 @@ const Footer = () => {
                     <div className="">
                         <span className="sign-inoption">
                             <span className="">Register for free</span>
-                            <button
-                                type="button"
+                            <Link
+                                type="Link"
+                                href="/signup"
                                 className="inline-block">
                                 Sign up!
-                            </button>
+                            </Link>
                         </span>
                     </div>
                 </div>

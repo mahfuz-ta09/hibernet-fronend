@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import '../../../../css/home/TopRatedCourse/TopRatedCourse.css'
+import Link from 'next/link'
 
 const TopRatedCourse = () => {
     let toprated:any = []
@@ -35,7 +36,7 @@ const TopRatedCourse = () => {
 
                 </div>
                 <div className='see-btn'>
-                    <button className="seemore">See More</button>
+                    <Link  href="/courses" className="seemore">See More</Link>
                 </div>
             </div>
         </div>
