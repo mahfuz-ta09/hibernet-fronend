@@ -1,14 +1,18 @@
+'use client'
 import Link from 'next/link'
 import '../../css/dashBoard/layout.css'
-
+import sideNavItem from '@/utils/dashBoard/sideNavItem'
+import { Role } from '@/types/common'
 
 
 
 const layout = ({ children } : {children : React.ReactNode} ) => {
+  
     return (
       <div className='dashboard-layout'>
           <div className="app">
             <header className="app-header">
+              
               <div className="app-header-logo">
                 <div className="logo">
                   <span className="logo-icon">
@@ -20,30 +24,7 @@ const layout = ({ children } : {children : React.ReactNode} ) => {
                   </h1>
                 </div>
               </div>
-              <div className="app-header-navigation">
-                <div className="tabs">
-                  <a href="#">
-                    Overview
-                  </a>
-                  <a href="#" className="active">
-                    Payments
-                  </a>
-                  <a href="#">
-                    Cards
-                  </a>
-                  <a href="#">
-                    Account
-                  </a>
-                  <a href="#">
-                    System
-                  </a>
-                  <a href="#">
-                    Business
-                  </a>
-                  
-                  <Link className='text-white bold' href='/'>back to home</Link>
-                </div>
-              </div>
+              
               <div className="app-header-actions">
                 <button className="user-profile">
                   <span>Matheo Peterson</span>
@@ -60,41 +41,25 @@ const layout = ({ children } : {children : React.ReactNode} ) => {
                   </button>
                 </div>
               </div>
-              <div className="app-header-mobile">
-                <button className="icon-button large">
-                  <i className="ph-list"></i>
-                </button>
-              </div>
-
+              
             </header>
             
             <div className="app-body">
               <div className="app-body-navigation">
                 <nav className="navigation">
-                  <a href="#">
+                  {
+                  sideNavItem("student" as Role).map((item,index) =>(
+                      <Link key={index} href={`/dashboard/${item?.path}`}>
+                        <i className="ph-browsers"></i>
+                        <span>{item?.title}</span>
+                      </Link>
+                    ))
+                  }
+                  <Link href="/">
                     <i className="ph-browsers"></i>
-                    <span>Dashboard</span>
-                  </a>
-                  <a href="#">
-                    <i className="ph-check-square"></i>
-                    <span>Scheduled</span>
-                  </a>
-                  <a href="#">
-                    <i className="ph-swap"></i>
-                    <span>Transfers</span>
-                  </a>
-                  <a href="#">
-                    <i className="ph-file-text"></i>
-                    <span>Templates</span>
-                  </a>
-                  <a href="#">
-                    <i className="ph-globe"></i>
-                    <span>SWIFT</span>
-                  </a>
-                  <a href="#">
-                    <i className="ph-clipboard-text"></i>
-                    <span>Exchange</span>
-                  </a>
+                    <span>back to home?</span>
+                  </Link>
+
                 </nav>
                 <footer className="footer">
                   <div>
@@ -104,9 +69,9 @@ const layout = ({ children } : {children : React.ReactNode} ) => {
                 </footer>
               </div>
               <div className="app-body-main-content">
-                <section className="service-section">
+                {/* <section className="service-section">
                   <h2>Service</h2>
-                </section>
+                </section> */}
 
                 {children}
               
