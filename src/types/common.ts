@@ -11,4 +11,5 @@ export type NavContent = {
     title: string
     path: string
     icon: string
+    nested: string[]
 }

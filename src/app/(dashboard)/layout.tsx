@@ -3,86 +3,77 @@ import Link from 'next/link'
 import '../../css/dashBoard/layout.css'
 import sideNavItem from '@/utils/dashBoard/sideNavItem'
 import { Role } from '@/types/common'
+import { useEffect, useRef, useState } from 'react'
+import { MdEditSquare, MdOutlineDoubleArrow } from 'react-icons/md'
 
 
 
 const layout = ({ children } : {children : React.ReactNode} ) => {
-  
+    const btnRef = useRef<HTMLButtonElement>(null)
+    const navRef = useRef<HTMLDivElement>(null)
+    const [role,setRole] = useState("admin")
+    const [isOpen,setIsOpen] = useState(true)
+
+    useEffect(()=>{
+      const handleNavBar = (e:any) => {
+        if(navRef.current && btnRef.current && !navRef.current.contains(e.target) &&  !btnRef.current.contains(e.target)){
+          setIsOpen(false)
+        }
+      }
+
+      document.addEventListener("click",handleNavBar)
+      
+      return ()=> {
+        document.removeEventListener("click",handleNavBar)
+      }
+    },[])
+
+    const handler = () =>{
+      setIsOpen(true)
+    }
+
+
     return (
-      <div className='dashboard-layout'>
-          <div className="app">
-            <header className="app-header">
-              
-              <div className="app-header-logo">
-                <div className="logo">
-                  <span className="logo-icon">
-                    <img src="https://assets.codepen.io/285131/almeria-logo.svg" />
-                  </span>
-                  <h1 className="logo-title">
-                    <span>hiber-net edu</span>
-                    <span>Syleht,Bangladesh</span>
-                  </h1>
-                </div>
+      <div  className='dashboard-layout'>
+        <div className="dash-content">
+          
+          <div ref={navRef} className={isOpen? "dash-nav active":"dash-nav hide"}>
+            <div className="dash-nav-element">
+              <div className='dash-nav-header'>
+              <h1>Hiber-net edu</h1>
+                <h1>Sylhet,Bangladesh</h1>
               </div>
-              
-              <div className="app-header-actions">
-                <button className="user-profile">
-                  <span>Matheo Peterson</span>
-                  <span>
-                    <img src="https://assets.codepen.io/285131/almeria-avatar.jpeg" />
-                  </span>
-                </button>
-                <div className="app-header-actions-buttons">
-                  <button className="icon-button large">
-                    <i className="ph-magnifying-glass"></i>
-                  </button>
-                  <button className="icon-button large">
-                    <i className="ph-bell"></i>
-                  </button>
-                </div>
-              </div>
-              
-            </header>
-            
-            <div className="app-body">
-              <div className="app-body-navigation">
-                <nav className="navigation">
-                  {
-                  sideNavItem("student" as Role).map((item,index) =>(
-                      <Link key={index} href={`/dashboard/${item?.path}`}>
-                        <i className="ph-browsers"></i>
+              <div className='dash-nav-body'>
+                {
+                  sideNavItem(role as Role).map((item,index) =>(
+                      <Link className='nav-link' key={index} href={`/dashboard/${item?.path}`}>
                         <span>{item?.title}</span>
                       </Link>
                     ))
-                  }
-                  <Link href="/">
-                    <i className="ph-browsers"></i>
-                    <span>back to home?</span>
-                  </Link>
-
-                </nav>
-                <footer className="footer">
-                  <div>
-                    Hiber-net edu<br />
-                    All Rights Reserved 2024
-                  </div>
-                </footer>
+                }
               </div>
-              <div className="app-body-main-content">
-                {/* <section className="service-section">
-                  <h2>Service</h2>
-                </section> */}
-
-                {children}
-              
+              <div className='dash-nav-footer'>
+                <Link className='footer-nav' href="/">back to home</Link>
               </div>
-              
             </div>
           </div>
+
+          <div className="dash-item">
+            <div className="dash-item-header">
+              <button  className='nav-icon-btn' onClick={() => handler()} ref={btnRef} ><MdOutlineDoubleArrow  className='nav-icon'/></button>
+              <div className='header-title'>
+                <h1>hello mr shit</h1>
+                <h1>wellcome to dashboard</h1>
+              </div>
+            </div>
+            <div className='dash-item-content'>
+              {children}
+            </div>
+          </div>
+
+        </div>
       </div>
     )
   }
   
   export default layout
-
-  // {children}
