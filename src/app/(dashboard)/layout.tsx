@@ -4,25 +4,24 @@ import '../../css/dashBoard/layout.css'
 import sideNavItem from '@/utils/dashBoard/sideNavItem'
 import { Role } from '@/types/common'
 import { useEffect, useRef, useState } from 'react'
-import { MdEditSquare, MdOutlineDoubleArrow } from 'react-icons/md'
+import {  MdOutlineDoubleArrow } from 'react-icons/md'
 
 
 
 const layout = ({ children } : {children : React.ReactNode} ) => {
     const btnRef = useRef<HTMLButtonElement>(null)
     const navRef = useRef<HTMLDivElement>(null)
-    const [role,setRole] = useState("admin")
+    const [role,setRole] = useState("student")
     const [isOpen,setIsOpen] = useState(true)
 
+    
     useEffect(()=>{
       const handleNavBar = (e:any) => {
         if(navRef.current && btnRef.current && !navRef.current.contains(e.target) &&  !btnRef.current.contains(e.target)){
           setIsOpen(false)
         }
       }
-
       document.addEventListener("click",handleNavBar)
-      
       return ()=> {
         document.removeEventListener("click",handleNavBar)
       }

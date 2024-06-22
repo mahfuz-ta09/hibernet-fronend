@@ -20,6 +20,12 @@ const sideNavItem = (role : Role) => {
                     path    : `${role}/manage-users`,
                     icon    : "Dashboard",
                     nested  : []
+                },
+                {
+                    title   : "Statistics",
+                    path    : `${role}/web-stat`,
+                    icon    : "Dashboard",
+                    nested  : []
                 }
             );
             break;
@@ -28,36 +34,36 @@ const sideNavItem = (role : Role) => {
                 {
                     title       : "Dasboard",
                     path        : `${role}`,
-                    icon        : "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    icon        : "",
                     nested      : []
                 },
                 {
                     title       : "Specialties",
                     path        : `${role}/specialties`,
-                    icon        : "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    icon        : "",
                     nested      : []
                 },
                 {
                     title       : "Courses",
                     path        : `${role}/courses`,
-                    icon        : "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    icon        : "",
                     nested      : [`${role}/courses/add`]
                 },
                 {
                     title       : "Schedules",
                     path        : `${role}/schedules`,
-                    icon        : "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    icon        : "",
                     nested      : []
                 },
                 // {
                 //     title       : "Appointments",
                 //     path        : `${role}/appointments`,
-                //     icon       : "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                //     icon       : "",
                 // },
                 {
                     title       : "Reviews",
                     path        : `${role}/reviews`,
-                    icon        : "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    icon        : "",
                     nested      : []
                 },
             );
@@ -67,19 +73,19 @@ const sideNavItem = (role : Role) => {
                 {
                     title       : "Dasboard",
                     path        : `${role}`,
-                    icon        : "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    icon        : "",
                     nested      : []
                 },
                 {
                     title       : "Schedules",
                     path        : `${role}/schedules`,
-                    icon        : "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    icon        : "",
                     nested      : []
                 },
                 {
                     title       : "My classes",
                     path        : `${role}/my-classes`,
-                    icon        : "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    icon        : "",
                     nested      : []
                 },
             );

@@ -1,0 +1,148 @@
+.schedule-container{
+    width: 100%;
+    margin: 10vh auto;
+}
+
+
+.page-element{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.page-element h1{
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.page-element button{
+    padding: 4px 39px;
+    border-radius: 93px;
+    color: white;
+    background: transparent;
+    border: 2px solid white;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+
+.table-wrapper{
+    max-width: 1300px;
+    margin: 10px auto;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: 0 5px 60px #fff;
+}
+
+
+
+.fl-table thead th {
+    padding: 8px;
+    color: black;
+    background: rgb(196, 194, 191);
+    border-bottom: 2px solid #fff;
+}
+
+
+.fl-table thead th:nth-child(odd) {
+    color: #fff;
+    background: none;
+}
+
+.fl-table tr:nth-child(even) {
+    color: black;
+    background: #fff;
+}
+
+
+
+.fl-table tbody tr:nth-child(odd){
+    padding: 19px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+
+.fl-table tbody tr:nth-child(even){
+    padding: 19px;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+    background: rgb(196, 194, 191);
+}
+
+
+
+
+
+@media screen and (max-width:780px) {
+    .table-wrapper{
+        width: 95%;
+        overflow-x: auto;
+    }
+
+    .fl-table{
+        min-width: 700px;
+    }
+}
+
+
+
+/* modals design */
+
+.modal-container{
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .4s ease-in-out;
+    opacity: 0;
+    z-index: -10;
+}
+
+.modal-container.modalshow{
+    opacity: 1;
+    z-index: 10;
+}
+
+.modal-container.modalhide{
+    opacity: 0;
+    z-index: -10;
+}
+
+.modal-content{
+    width: 50%;
+    height: 50vh;
+    border-radius: 5px;
+    background: rgb(196, 194, 191);
+}
+
+.hide-modal{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 10px 20px;
+}
+
+.hide-modal button{
+    font-size: 25px;
+    font-weight: 900;
+}
