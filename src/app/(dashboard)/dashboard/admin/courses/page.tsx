@@ -5,7 +5,7 @@ import '../../../../../css/dashBoard/specialties/specialtiesStyle.css'
 
 
 
-const page = () => {
+const Page = () => {
   const [isModalOpen,setIsModalOpen] = useState(false)
   return (
     <div className='schedule-container'>
@@ -68,4 +68,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

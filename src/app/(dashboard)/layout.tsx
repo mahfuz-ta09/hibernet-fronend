@@ -11,10 +11,10 @@ import {  MdOutlineDoubleArrow } from 'react-icons/md'
 const layout = ({ children } : {children : React.ReactNode} ) => {
     const btnRef = useRef<HTMLButtonElement>(null)
     const navRef = useRef<HTMLDivElement>(null)
-    const [role,setRole] = useState("student")
+    const [role,setRole] = useState("admin")
     const [isOpen,setIsOpen] = useState(true)
 
-    
+
     useEffect(()=>{
       const handleNavBar = (e:any) => {
         if(navRef.current && btnRef.current && !navRef.current.contains(e.target) &&  !btnRef.current.contains(e.target)){
