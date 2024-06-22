@@ -8,7 +8,7 @@ import {  MdOutlineDoubleArrow } from 'react-icons/md'
 
 
 
-const LayoutPage = ({ children } : {children : React.ReactNode} ) => {
+const LayoutPage = () => {
 
     const btnRef = useRef<HTMLButtonElement>(null)
     const navRef = useRef<HTMLDivElement>(null)
@@ -34,13 +34,10 @@ const LayoutPage = ({ children } : {children : React.ReactNode} ) => {
 
 
     return (
-        <div  className='dashboard-layout'>
-            <div className="dash-content">
-            
-            <div ref={navRef} className={isOpen? "dash-nav active":"dash-nav hide"}>
-                <div className="dash-nav-element">
+        <div ref={navRef} className={isOpen? "dash-nav active":"dash-nav hide"}>
+            <div className="dash-nav-element">
                 <div className='dash-nav-header'>
-                <h1>Hiber-net edu</h1>
+                    <h1>Hiber-net edu</h1>
                     <h1>Sylhet,Bangladesh</h1>
                 </div>
                 <div className='dash-nav-body'>
@@ -52,25 +49,10 @@ const LayoutPage = ({ children } : {children : React.ReactNode} ) => {
                         ))
                     }
                 </div>
+                <button  className='nav-icon-btn' onClick={() => handler()} ref={btnRef} ><MdOutlineDoubleArrow  className='nav-icon'/></button>
                 <div className='dash-nav-footer'>
                     <Link className='footer-nav' href="/">back to home</Link>
                 </div>
-                </div>
-            </div>
-
-            <div className="dash-item">
-                <div className="dash-item-header">
-                <button  className='nav-icon-btn' onClick={() => handler()} ref={btnRef} ><MdOutlineDoubleArrow  className='nav-icon'/></button>
-                <div className='header-title'>
-                    <h1>hello mr shit</h1>
-                    <h1>wellcome to dashboard</h1>
-                </div>
-                </div>
-                <div className='dash-item-content'>
-                {children}
-                </div>
-            </div>
-
             </div>
         </div>
     )
