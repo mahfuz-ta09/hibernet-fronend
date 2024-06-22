@@ -11,7 +11,7 @@ import {  MdOutlineDoubleArrow } from 'react-icons/md'
 const layout = ({ children } : {children : React.ReactNode} ) => {
     const btnRef = useRef<HTMLButtonElement>(null)
     const navRef = useRef<HTMLDivElement>(null)
-    const [role,setRole] = useState("admin")
+    const [role,setRole] = useState("super_admin")
     const [isOpen,setIsOpen] = useState(true)
 
 
