@@ -17,7 +17,7 @@
 	width: 25vw;
 	height: 100%;
 	background: #343c97;
-	opacity: .8ffff;
+	opacity: .8;
 	border-right: 3px solid white;
 	position: fixed;
 	top: 0;
@@ -120,8 +120,23 @@
 }
 
 .dash-item-content{
-	margin-top: 6vh;
 	width: 100%;
+}
+
+.dash-nav-footer{
+	width: 100%;
+	text-align: center;
+}
+
+.footer-nav{
+	text-decoration: underline;
+	color: whitesmoke;
+	transition: .3s ease-in-out;
+}
+
+.footer-nav:hover{
+	transform: translateY(-10px);
+	color: #ffaaaa;
 }
 
 @media screen and (max-width:450px) {
