@@ -18,7 +18,7 @@
 	height: 100%;
 	background: #343c97;
 	opacity: .8;
-	border-right: 3px solid white;
+	overflow: hidden;
 	position: fixed;
 	top: 0;
 	z-index: 3;
@@ -41,7 +41,7 @@
 	justify-content: space-between;
 	height: 100%;
 	width: 100%;
-	padding: 55px 30px;
+	padding: 55px 0 55px 20px;
 	margin: 0 auto;
 	color: white;
 	background: #000;
@@ -81,17 +81,19 @@
 	justify-content: start;
 	gap: 10px;
 	font-size: 20px;
+	color: #808080;
 }
 
 .nav-link.active{
 	font-size: 20px;
 	font-weight: 900;
-	color: #343c97;
+	color: #fff;
+	border-right: 7px solid white;
 }
 
 .nav-link:hover{
 	transition: .3s ease-in-out;
-	scale: 1.2;
+	transform: translate(15px);
 }
 
 .dash-item-header{

@@ -14,7 +14,7 @@ const LayoutPage = () => {
     const btnRef = useRef<HTMLButtonElement>(null)
     const navRef = useRef<HTMLDivElement>(null)
     const [role,setRole] = useState("admin")
-    const [isOpen,setIsOpen] = useState(true)
+    const [isOpen,setIsOpen] = useState(false)
     let dashTitle:string = "/dashboard/" 
 
 
