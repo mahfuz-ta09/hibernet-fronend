@@ -1,6 +1,6 @@
 import { USER_ROLE } from "@/const/role";
 import { NavContent, Role } from "@/types/common"
-
+import { FaVectorSquare } from "react-icons/fa6";
 
 const sideNavItem = (role : Role) => {
     const navItem:NavContent[] = []
@@ -12,20 +12,17 @@ const sideNavItem = (role : Role) => {
                 {
                     title   : "Dashboard",
                     path    : `${role}`,
-                    icon    : "Dashboard",
-                    nested  : []
+                    icon    : FaVectorSquare,
                 },
                 {
                     title   : "Manage Users",
                     path    : `${role}/manage-users`,
-                    icon    : "Dashboard",
-                    nested  : []
+                    icon    : FaVectorSquare,
                 },
                 {
                     title   : "Statistics",
                     path    : `${role}/web-stat`,
-                    icon    : "Dashboard",
-                    nested  : []
+                    icon    : FaVectorSquare,
                 }
             );
             break;
@@ -34,26 +31,22 @@ const sideNavItem = (role : Role) => {
                 {
                     title       : "Dasboard",
                     path        : `${role}`,
-                    icon        : "",
-                    nested      : []
+                    icon        : FaVectorSquare,
                 },
                 {
                     title       : "Specialties",
                     path        : `${role}/specialties`,
-                    icon        : "",
-                    nested      : []
+                    icon        : FaVectorSquare,
                 },
                 {
                     title       : "Courses",
                     path        : `${role}/courses`,
-                    icon        : "",
-                    nested      : [`${role}/courses/add`]
+                    icon        : FaVectorSquare,
                 },
                 {
                     title       : "Schedules",
                     path        : `${role}/schedules`,
-                    icon        : "",
-                    nested      : []
+                    icon        : FaVectorSquare,
                 },
                 // {
                 //     title       : "Appointments",
@@ -63,8 +56,7 @@ const sideNavItem = (role : Role) => {
                 {
                     title       : "Reviews",
                     path        : `${role}/reviews`,
-                    icon        : "",
-                    nested      : []
+                    icon        : FaVectorSquare,
                 },
             );
             break;
@@ -73,20 +65,17 @@ const sideNavItem = (role : Role) => {
                 {
                     title       : "Dasboard",
                     path        : `${role}`,
-                    icon        : "",
-                    nested      : []
+                    icon        : FaVectorSquare,
                 },
                 {
                     title       : "Schedules",
                     path        : `${role}/schedules`,
-                    icon        : "",
-                    nested      : []
+                    icon        : FaVectorSquare,
                 },
                 {
                     title       : "My classes",
                     path        : `${role}/my-classes`,
-                    icon        : "",
-                    nested      : []
+                    icon        : FaVectorSquare,
                 },
             );
             break;

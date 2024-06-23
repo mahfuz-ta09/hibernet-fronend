@@ -1,4 +1,5 @@
 import { USER_ROLE } from "@/const/role"
+import { IconType } from "react-icons"
 
 export type Role = {
     SUPER_ADMIN?: typeof USER_ROLE.SUPER_ADMIN
@@ -10,6 +11,22 @@ export type Role = {
 export type NavContent = {
     title: string
     path: string
-    icon: string
-    nested: string[]
+    icon: IconType
+}
+
+export type metaT = {
+    page : number
+    limit: number
+    total: number
+}
+
+export type responseSuccess = {
+    data: any
+    meta?: metaT
+}
+
+export type responseError = {
+    statusCode?: number
+    message?:string
+    errorMessage?:responseError[]
 }

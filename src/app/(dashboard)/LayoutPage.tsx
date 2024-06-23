@@ -5,15 +5,19 @@ import sideNavItem from '@/utils/dashBoard/sideNavItem'
 import { Role } from '@/types/common'
 import { useEffect, useRef, useState } from 'react'
 import {  MdOutlineDoubleArrow } from 'react-icons/md'
+import { usePathname } from 'next/navigation'
 
 
 
 const LayoutPage = () => {
-
+    const pathname = usePathname() 
     const btnRef = useRef<HTMLButtonElement>(null)
     const navRef = useRef<HTMLDivElement>(null)
     const [role,setRole] = useState("admin")
     const [isOpen,setIsOpen] = useState(true)
+    let dashTitle:string = "/dashboard/" 
+
+
 
 
     useEffect(()=>{
@@ -38,16 +42,16 @@ const LayoutPage = () => {
             <div className="dash-nav-element">
                 <div className='dash-nav-header'>
                     <h1>Hiber-net edu</h1>
-                    <h1>Sylhet,Bangladesh</h1>
-                </div>
-                <div className='dash-nav-body'>
-                    {
-                    sideNavItem(role as Role).map((item,index) =>(
-                        <Link className='nav-link' key={index} href={`/dashboard/${item?.path}`}>
-                            <span>{item?.title}</span>
-                        </Link>
-                        ))
-                    }
+                    <div className='dash-nav-body'>
+                        {
+                        sideNavItem(role as Role).map((item,index) =>(
+                            <Link className={pathname === `${dashTitle}`+item?.path ? 'nav-link active' :'nav-link'} key={index} href={`/dashboard/${item?.path}`}>
+                                <item.icon />
+                                <span>{item?.title}</span>
+                            </Link>
+                            ))
+                        }
+                    </div>
                 </div>
                 <button  className='nav-icon-btn' onClick={() => handler()} ref={btnRef} ><MdOutlineDoubleArrow  className='nav-icon'/></button>
                 <div className='dash-nav-footer'>
