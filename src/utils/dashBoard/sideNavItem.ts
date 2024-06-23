@@ -48,11 +48,11 @@ const sideNavItem = (role : Role) => {
                     path        : `${role}/schedules`,
                     icon        : FaVectorSquare,
                 },
-                // {
-                //     title       : "Appointments",
-                //     path        : `${role}/appointments`,
-                //     icon       : "",
-                // },
+                {
+                    title       : "Banner",
+                    path        : `${role}/banner`,
+                    icon        : FaVectorSquare,
+                },
                 {
                     title       : "Reviews",
                     path        : `${role}/reviews`,
