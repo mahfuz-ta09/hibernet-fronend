@@ -30,3 +30,8 @@ export type responseError = {
     message?:string
     errorMessage?:responseError[]
 }
+
+export type jwtPayload =  {
+    email?:string
+    role?:string
+}

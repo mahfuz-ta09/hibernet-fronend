@@ -5,6 +5,8 @@ import '../../css/Login/Login.css'
 import bgImg from '../../../public/assets/log.webp'
 import Image from "next/image"
 import convertFormData from "@/utils/convertFormData"
+import { signUpUser } from "@/action/registerUser"
+import { useRouter } from "next/navigation"
 
 type Inputs = {
     name: string
@@ -14,14 +16,25 @@ type Inputs = {
 
 
 const SignUpPage = () => {
+    const router = useRouter()
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm<Inputs>()
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const onSubmit: SubmitHandler<Inputs> =  async(data) => {
         var formData = convertFormData(data)
+        try{
+            const res = await signUpUser(formData)
+            console.log(res)
+            if(res?.accessToken){
+                localStorage.setItem('accessToken',res?.accessToken)
+                router.push('/')
+            }
+        }catch(err:any){
+            console.log(err)
+        }
         console.log(formData)
     }
 

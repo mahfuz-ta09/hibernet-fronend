@@ -5,12 +5,14 @@ import bgImg from '../../../public/assets/log.webp'
 import Image from 'next/image'
 import { useForm, SubmitHandler } from "react-hook-form"
 import convertFormData from '@/utils/convertFormData'
+import { logInUser } from '@/action/registerUser'
+import { useRouter } from 'next/navigation'
 
 type Inputs = {
     email: string
     password: string
 }
-  
+
 
 
 const LoginPage = () => {
@@ -19,10 +21,19 @@ const LoginPage = () => {
         handleSubmit,
         formState: { errors },
     } = useForm<Inputs>()
+    const router = useRouter()
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const onSubmit: SubmitHandler<Inputs> = async(data) => {
       let formData = convertFormData(data)
-      console.log(formData)
+      try{
+        const res = await logInUser(formData)
+        if(res?.accessToken){
+            localStorage.setItem('accessToken',res?.accessToken)
+            router.push('/')
+        }
+      }catch(err:any){
+        console.log(err)
+      }
     }
 
     return (

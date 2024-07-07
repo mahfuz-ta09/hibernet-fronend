@@ -1,24 +1,19 @@
 'use client'
 import Link from 'next/link'
 import '../../css/dashBoard/layout.css'
-import sideNavItem from '@/utils/dashBoard/sideNavItem'
-import { Role } from '@/types/common'
 import { useEffect, useRef, useState } from 'react'
 import {  MdOutlineDoubleArrow } from 'react-icons/md'
-import { usePathname } from 'next/navigation'
+import dynamic from 'next/dynamic'
 
 
 
 const LayoutPage = () => {
-    const pathname = usePathname() 
     const btnRef = useRef<HTMLButtonElement>(null)
     const navRef = useRef<HTMLDivElement>(null)
-    const [role,setRole] = useState("admin")
     const [isOpen,setIsOpen] = useState(false)
-    let dashTitle:string = "/dashboard/" 
 
 
-
+    const NavLink = dynamic(() => import('./DashNavLink'), { ssr: false })
 
     useEffect(()=>{
       const handleNavBar = (e:any) => {
@@ -42,16 +37,7 @@ const LayoutPage = () => {
             <div className="dash-nav-element">
                 <div className='dash-nav-header'>
                     <h1>Hiber-net edu</h1>
-                    <div className='dash-nav-body'>
-                        {
-                        sideNavItem(role as Role).map((item,index) =>(
-                            <Link className={pathname === `${dashTitle}`+item?.path ? 'nav-link active' :'nav-link'} key={index} href={`/dashboard/${item?.path}`}>
-                                <item.icon />
-                                <span>{item?.title}</span>
-                            </Link>
-                            ))
-                        }
-                    </div>
+                    <NavLink />
                 </div>
                 <button  className='nav-icon-btn' onClick={() => handler()} ref={btnRef} ><MdOutlineDoubleArrow  className='nav-icon'/></button>
                 <div className='dash-nav-footer'>
