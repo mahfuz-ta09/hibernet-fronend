@@ -305,6 +305,10 @@
         background: #fff;
         color: #000;
     }
+    .home-feed-top{
+        font-size: 25px;
+    }
+    
 
     @keyframes feedTag-4 {
         to{

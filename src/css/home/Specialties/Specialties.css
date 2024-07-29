@@ -82,5 +82,11 @@
     .specialities-holder{
         padding: 10px;
     }
-    
+
+    .specialities-header h1{
+        font-size: 25px;
+        line-height: 25px;
+        font-weight: 700;
+        color: #343c97;
+    }
 }
