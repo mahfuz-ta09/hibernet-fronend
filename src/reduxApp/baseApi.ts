@@ -5,8 +5,7 @@ import { axiosBaseQuery } from './axios/axiosBaseQuery'
 export const baseApi = createApi({
     reducerPath: 'api',
     baseQuery: axiosBaseQuery({ 
-        baseUrl: 'http://localhost:5000/dashboard' 
+        baseUrl: 'http://localhost:7373/app/v1' 
     }),
     endpoints: () => ({}),
 })
-

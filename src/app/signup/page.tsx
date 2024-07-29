@@ -27,7 +27,6 @@ const SignUpPage = () => {
         var formData = convertFormData(data)
         try{
             const res = await signUpUser(formData)
-            console.log(res)
             if(res?.accessToken){
                 localStorage.setItem('accessToken',res?.accessToken)
                 router.push('/')
@@ -35,7 +34,7 @@ const SignUpPage = () => {
         }catch(err:any){
             console.log(err)
         }
-        console.log(formData)
+
     }
 
     return (

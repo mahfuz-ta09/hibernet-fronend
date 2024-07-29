@@ -1,215 +1,207 @@
-.blogs{
+.blog-container{
     width: 100%;
     height: 100%;
     background: #efefef;
 }
 
-.blog-container{
-    max-width: 1250px;
+.blog-page{
+    max-width:1300px;
+    width: 100%;
+    min-height: 90vh;
     margin: 0 auto;
-    display: grid;
-    padding-top: 10vh;
-    grid-template-columns: 3fr 1fr;
-    gap: 10px;
+    background: #fff;
 }
 
-.blog-elements{
+.blog-content{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: 3fr 1fr;
     gap: 10px;
     padding: 20px;
 }
 
-.blog{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
+.blogs{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
 }
 
-.blog-img{
+.blog{
+    width: 100%;
+    height: 400px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.blog-image{
+    border-radius: 5px;
+    object-fit: cover;
     height: 100%;
     width: 100%;
-    left: 0;
-    bottom: 0;
-    object-fit: contain;
-    border-radius: 10px;
-    z-index: 0;
 }
 
 .blog-data{
-    z-index: 2;
     position: absolute;
-    left: 0;
-    bottom: -90px;
+    height: 150px;
     width: 100%;
-    height: auto;
-    padding: 10px;
-    color: white;
+    left: 0;
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9));
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
-
-.blog:hover .blog-data{
-    animation: show-content .4s forwards 1;
+.up{
+    bottom: -90px;
 }
 
-@keyframes show-content {
+.blog:hover .up{
+    animation: showBlog .5s forwards .2s ;
+}
+
+@keyframes showBlog {
     to{
-        bottom: 5px;
-        background: linear-gradient( rgba(0,0,0,0.9),rgba(52, 60, 151,0.4));
+        bottom: 0px;
     }
 }
 
 
-.creator{
-    display: flex;
-    align-items:flex-end;
-    justify-content: space-between;
-    padding: 20px 0;
-}
-
-.details-link{
-    padding: 7px 19px;
-    bottom: 0;
-    background: #fff;
-    display: block;
-    text-align: center;
-    color: black;
-    font-size: 15px;
-    font-weight: 500;
-    transition: .4s ease-in-out;
-    border-radius: 3px;
-}
-
-.details-link:hover{
-    transition: .4s ease-in-out;
-    scale: 1.03;
-}
-
 .blog-title{
-    font-size: 22px;
+    font-size: 24px;
+    line-height: 20px;
     font-weight: 600;
+    text-align: center;
+    color: #fff;
 }
 
-
-.blogs-nav{
+.blog-creator{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    background: rgb(156, 155, 155);
-    border-radius: 10px;
-}
-
-
-.blogs-nav-header{
-    width: 100%;
-    padding: 10px;
-    text-align: justify;
-}
-
-.blogs-nav-header h1{
-    font-size: 25px;
-    font-weight: 600;
-    font-family: "Caveat", cursive;
-    color: white;
-}
-
-.blogs-nav-header h1 span{
-    font-weight: 600;
-    font-family: "Caveat", cursive;
-    color: #343c97;
-}
-
-.side-nav-content{
     padding: 5px;
 }
 
-.search-box{
-    margin: 40px 0;
+.blog-creator h1{
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.blog-details-btn{
+    bottom: 0;
+    width: 100%;
+    background: transparent;
+    border-top: 1px solid #fff;
+    color: #000;
+    padding: 5px;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+}
+
+
+
+.blog-nav{
+    position: sticky;
+    top: 10vh;
+    height: 70vh;
+    background: rgb(128, 128, 128,0.3);
+    padding: 10px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.search-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     gap:10px;
 }
 
+.top-stories{
+    /* margin-bottom: 40px; */
+}
+
+.top-stories h1{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "Caveat", cursive;
+}
+
+.top-stories span{
+    color: #343c97;
+}
+
+.top-stories p{
+    text-align: justify;
+    font-size: 15px;
+}
+
 .search-box input{
-    display: block;
-    width: 90%;
-    padding: 6px;
-    border-radius: 3px;
+    padding: 7px;
+    width: 100%;
 }
 
 .search-box button{
-    padding: 4px 19px;
-    background: #fff;
-    color: black;
-    border-radius: 90px;
-}
-
-.side-nav-content h1{
-    text-align: center;
+    padding: 4px 16px;
+    background: #343c97;
+    border: none;
     color: white;
-    font-size: 25px;
-    font-weight: 700;
-    margin-top: 20px;
+    border-radius: 2px;
 }
 
-.side-nav-content ul{
-    width: 100%;
+.suggestion{
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 30px 0;
 }
 
-.side-nav-content ul li{
-    list-style: decimal;
-    text-decoration: underline;
-    margin-top: 20px;
-    cursor: pointer;
-    color: white;
-    font-size: 18px;
+.suggestion p{
+    padding: 2px 7px;
+    background: white;
+    font-size: 15px;
+    font-weight: 300;
+    color: #000;
 }
 
-.side-nav-content ul li:hover{
-    transition: .2s ease-in-out;
-    color: black;
-    scale: 1.6;
+.suggestion p:hover{
+    scale: 1.2;
 }
 
-@media screen and (max-width:780px){
-    .blog-container{
-        gap: 0px;
-    }
-
-    .blog-elements{
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        gap: 10px;
-        padding: 10px 20px;
-    }
-}
-
-@media screen and (max-width:450px){
-    .blog-elements{
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(1,1fr);
-        gap: 10px;
-        padding: 10px 20px;
-    }
-
-    .blog-container{
-        grid-template-columns:auto;
-        padding: 0 10px 10px 10px;
-    }
+@media screen and (max-width:433px) {
     
-    .blogs-nav{
-        border-radius: 0;
-        padding: 20px 10px;
+    .blog-content{
+        display: grid;
+        grid-template-columns:unset;
+        grid-template-rows: 1fr;
+        gap: 40px;
+        padding: 20px;
     }
+
+    .blogs{
+        width: 100%;
+        display: grid;
+        grid-template-columns:repeat(1,1fr);
+        gap: 20px;
+    }
+
+    
+    .blog{
+        height: 500px;
+    }
+
+    
 }

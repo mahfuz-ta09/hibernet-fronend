@@ -1,4 +1,3 @@
-
 import Image from 'next/image'
 import '../../../../css/home/WhyChooseUs/WhyChooseUs.css'
 import im from '../../../../../public/assets/login-page.jpeg'
@@ -7,6 +6,7 @@ import trophy from '../../../../../public/assets/trophy.jpg'
 const WhyChooseUs = () => {
 
 
+    
     return (
         <div className='wcu-container'>
             <div className="wcu-holder">

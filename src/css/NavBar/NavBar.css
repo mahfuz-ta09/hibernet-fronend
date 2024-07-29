@@ -13,7 +13,7 @@
 }
 
 .nav-content{
-    max-width: 1300px;
+    max-width: 1350px;
     width: 100%;
     margin: 0 auto;
     height: 100%;
@@ -66,8 +66,13 @@
 
 .link{
     color: white;
-    font-size: 20px;
+    font-size: 25px;
     line-height: 20px;
+}
+
+.home-btn{
+    font-size: 25px !important;
+    
 }
 
 .link:hover{
@@ -94,9 +99,10 @@
 }
 
 
+
 @media screen and (max-width:750px) {
     .nav-content{
-        padding: 0 5px;
+        padding: 0 15px;
         height: 8vh;
     }
     .nav-btn-icon{
@@ -119,9 +125,17 @@
         height: 50vh;
         top: 10vh;
         border-top: 4px solid white;
-        padding: 30px 0;
+        padding: 40px 0;
         transition: left 1s;
+        gap: 15px;
     }
+
+    .link{
+        color: white;
+        font-size: 18px;
+        line-height: 20px;
+    }
+    
     
     .show {
         animation: show-navbar 1s forwards;

@@ -1,0 +1,102 @@
+.singleBlog-details{
+    max-width: 900px;
+    width: 100%;
+    min-height: 90vh;
+    margin: 0 auto;
+    background: rgb(52, 60, 151,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+}
+
+.header-container{
+    width: 100%;
+}
+
+.blog-header{
+    font-size: 25px;
+    font-weight: 700;
+    text-align: justify;
+    display: block;
+}
+
+.image-container{
+    width: 90%;
+    margin: 0 auto;
+    height: 50vh;
+}
+
+.blog-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-blog{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.author-info{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.author-name{
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+.blog-react{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.like{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    line-height: 18px;
+    font-weight: 600;
+    gap: 5px;
+}
+
+.checked-like{
+    color: green;
+}
+
+.checked-dislike{
+    color: red;
+}
+
+.blog-section{
+    margin: 15px 0;
+}
+
+.blog-section p{
+    font-size: 20px;
+    line-height: 25px;
+    text-align: justify;
+}
+
+.visite-info{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+    font-size: 20px;
+    font-weight: 600;
+}

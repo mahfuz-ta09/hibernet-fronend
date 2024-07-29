@@ -1,6 +1,6 @@
 .course-page{
     width: 100%;
-    height: 100%;
+    min-height: 90vh;
     background: #efefef;
 }
 
@@ -10,7 +10,8 @@
 }
 
 .course-content h1{
-    color: #343c97;
+    text-align: center;
+    color: #000;
     font-size: 25px;
     padding: 30px 0;
     font-weight: 600;
@@ -19,24 +20,23 @@
 .courses{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 20px;
+    gap: 60px;
     padding: 20px 100px;
 }
 
 .course{
-    width: 350px;
-    height: 450px;
+    width: 320px;
+    height: 380px;
     border-radius: 7px;
     background: #fff;
     position: relative;
+    filter: drop-shadow(0 10px 0.65rem gray);
 }
 
 .course-image{
     object-fit: cover;
     height: 50%;
     width: 100%;
-    border-radius: 7px;
-    filter: drop-shadow(0 10px 0.65rem gray);
     margin-bottom: 20px;
 }
 
@@ -53,28 +53,30 @@
 }
 
 
-.course-button button:nth-child(1){
+.cb-link1{
     flex: 1;
     border-radius: 4px;
     color: white;
     background: #343c97;
     padding: 5px 30px;
     border: 2px solid #343c97;
+    text-align: center;
 }
 
-.course-button button:nth-child(2){
+.cb-link2{
     flex: 1;
     border-radius: 4px;
     background: transparent;
-    border: 2px solid #343c97;
-    color: #343c97;
+    border: 2px solid #000;
+    color: #000;
     padding: 5px 30px;
+    text-align: center;
 }
 
 .course-detail p{
     font-size: 20px;
     margin-left: 20px;
-    color: #343c97;
+    color: #000;
 }
 
 @media screen and (max-width:450px) {
@@ -84,13 +86,13 @@
     .courses{
         display: grid;
         grid-template-columns: repeat(1,1fr);
-        gap: 20px;
+        gap: 40px;
         padding: 20px 0;
     }
     .course{
         width: 95%;
         margin: 0px auto;
-        height: 450px;
+        height: 380px;
         border-radius: 7px;
         background: #fff;
         position: relative;
