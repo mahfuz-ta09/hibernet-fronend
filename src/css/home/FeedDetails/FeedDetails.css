@@ -109,7 +109,6 @@
 }
 
 
-
 .home-feed-tag-3{
     font-size: 17px;
     background-color: rgba(255,255,255);
@@ -125,15 +124,19 @@
     justify-content: center;
     gap: 7px;
 }
+
 .feed-tag-3{
     padding: 5px 0;
     top: 20%;
     left: 85%;
     opacity: 0;
 }
+
 .home-feed-container:hover .feed-tag-3{
     animation: feedTag-3 1s forwards 1;
 }
+
+
 @keyframes feedTag-3 {
     to{
         opacity: 1;
@@ -147,7 +150,17 @@
     text-align: center;
     font-size: 35px;
     font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
+
+.home-feed-top:hover .home-feed-top-icon{
+    scale: 1.4;
+    transition: .2s ease-in-out;
+}
+
 
 @media screen and (max-width:1400px) {
     .home-feed-top{
@@ -267,7 +280,6 @@
     font-size: 18px;
     font-weight: 500;
 }
-
 
 
 @media screen and (max-width:450px) {

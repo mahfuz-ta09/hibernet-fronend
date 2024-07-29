@@ -28,6 +28,15 @@
 .home-review-header-tag1{
     font-size: 35px;
     font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.home-review-header-tag1:hover .home-review-header-tag1-icon{
+    scale: 1.4;
+    transition: .2s ease-in-out;
 }
 
 .home-review-header-tag2{
@@ -105,13 +114,11 @@
     font-weight: 500;
 }
 
-
 .review-header-ratings{
     font-size: 15px;
     font-weight: 800;
 
 }
-
 
 .review-body{
     padding: 20px 10px;

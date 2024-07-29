@@ -1,5 +1,6 @@
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa'
 import '../../../../css/home/Reviews/Reviews.css'
+import { BsMarkerTip } from 'react-icons/bs'
 
 const Reviews = () => {
     return (
@@ -7,18 +8,17 @@ const Reviews = () => {
         <div className='home-review-content'>
           
           <div className='home-review-header'>
-            <h1 className='home-review-header-tag1'>Expert&apos;s opinion</h1>
+            <h1 className='home-review-header-tag1'>Expert&apos;s opinion<BsMarkerTip className='home-review-header-tag1-icon'/></h1>
             <h1 className='home-review-header-tag2'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, libero.</h1>
           </div>
 
           <div className="home-reviews">
-            
+
             <div className="review-prev-cont">
               <FaAngleDoubleLeft className="review-prev-icon"/>
             </div>
-            
+
             <div className="review-slide">
-            
 
               <div className='review'>
                 <div className="review-header">

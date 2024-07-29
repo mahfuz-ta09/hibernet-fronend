@@ -3,13 +3,15 @@ import photo from '../../../../../public/assets/login-page.jpeg'
 import Image from 'next/image'
 import { FaBook, FaBookAtlas, FaBrain, FaMagnifyingGlass, FaPen, FaRegPenToSquare } from 'react-icons/fa6'
 import Link from 'next/link'
+import { BsFillBrushFill } from 'react-icons/bs'
+
 
 
 const BlogStories = () => {
   return (
     <div className='home-blog'>
         <div className="home-blog-content">
-            <h1 className='home-blog-header'>Top Stories</h1>
+            <h1 className='home-blog-header'>Top Stories<BsFillBrushFill className='home-blog-header-icon'/></h1>
             <div className="home-blog-content-holder">
                 <div className="home-small-card">
                     <div className="home-feed-card">

@@ -5,12 +5,15 @@ import Image from 'next/image'
 import { FaCircleQuestion, FaHandshake, FaPenNib } from 'react-icons/fa6'
 import { TbBasketCancel } from 'react-icons/tb'
 import { FaAngleDoubleRight, FaBrain } from 'react-icons/fa'
+import { BsFillQuestionOctagonFill } from 'react-icons/bs'
+
 
 
 const FeedDetails = () => {
+
     return (
       <div className="home-feed-container">
-        <h1 className='home-feed-top'>One step solution</h1>
+        <h1 className='home-feed-top'>One step solution<BsFillQuestionOctagonFill className='home-feed-top-icon'/></h1>
         <div className='home-feed-details'>
           <h1 className='home-feed-header'><FaCircleQuestion className='feed-hoome-icon'/>Have questions</h1>
           <Image src={photo} alt=""  className='question-icon que'/>
