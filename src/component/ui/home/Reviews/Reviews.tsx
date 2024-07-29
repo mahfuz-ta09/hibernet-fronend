@@ -7,7 +7,7 @@ const Reviews = () => {
         <div className='home-review-content'>
           
           <div className='home-review-header'>
-            <h1 className='home-review-header-tag1'>Expert's opinion</h1>
+            <h1 className='home-review-header-tag1'>Expert&apos;s opinion</h1>
             <h1 className='home-review-header-tag2'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta, libero.</h1>
           </div>
 
