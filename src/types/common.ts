@@ -35,3 +35,10 @@ export type jwtPayload =  {
     email?:string
     role?:string
 }
+
+
+export type spType = {
+    url: string,
+    _id: string,
+    name:string
+}

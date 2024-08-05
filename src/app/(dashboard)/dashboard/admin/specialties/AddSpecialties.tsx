@@ -2,6 +2,7 @@ import convertFormData from '@/utils/convertFormData'
 import '../../../../../css/dashBoard/specialties/specialtiesStyle.css'
 import { useForm, SubmitHandler } from "react-hook-form"
 import { usePostSpecialtiesMutation } from '@/reduxApp/endPoints/specialties/specialtiesEndpoints'
+import { toast } from 'sonner'
 
 
 type Inputs = {
@@ -22,12 +23,18 @@ const AddSpecialties = ({ isModalOpen , setIsModalOpen }:any) => {
     const onSubmit: SubmitHandler<Inputs> = async(data) => {
         const formData = convertFormData(data)
         try{
-            const res = await postSpecialties(formData)
+            const res:any = await postSpecialties(formData)
             console.log(res)
+            if(res.data){
+                toast.success(res.data.data)
+            }else if(res?.error){
+                toast.error(res?.error?.errorMessage)
+            }
         }catch(err:any){
-            console.log(err)
+            console.log("err:",err)
         }
     }
+
 
     return (
         <div className={isModalOpen ? "modal-container modalshow" : "modal-container modalhide"}>

@@ -1,21 +1,22 @@
 "use client"
-import { MdDelete, MdEditSquare } from 'react-icons/md'
+import { MdDelete } from 'react-icons/md'
 import '../../../../../css/dashBoard/specialties/specialtiesStyle.css'
 import { useState } from 'react'
 import AddSpecialties from './AddSpecialties'
+import { useGetSpecialtiesQuery } from '@/reduxApp/endPoints/specialties/specialtiesEndpoints'
+import { spType } from '@/types/common'
 
 
 const SpecialtiesPage = () => {
     const [isModalOpen,setIsModalOpen] = useState(false)
-
-
+    const { data:specialties } = useGetSpecialtiesQuery()
 
 
     return (
         <div className='schedule-container'>
             
             <div className="page-element">
-                <h1>checkout all the specialties:</h1>
+                <h1>checkout all the specialties:(available documents: {specialties?.meta})</h1>
                 <button onClick={()=>setIsModalOpen(!isModalOpen)}>add more?</button>
             </div>
 
@@ -24,42 +25,22 @@ const SpecialtiesPage = () => {
                     <thead>
                         <tr>
                             <th>id</th>
-                            <th>title</th>
-                            <th>icon name</th>
+                            <th>name</th>
+                            <th>URL</th>
                             <th>delete</th>
-                            <th>edit</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Content 1</td>
-                            <td>Content 1</td>
-                            <td>Content 1</td>
-                            <td><button><MdDelete className='text-3xl' /></button></td>
-                            <td><button><MdEditSquare className='text-3xl' /></button></td>
-                        </tr>
-                        <tr>
-                            <td>Content 1</td>
-                            <td>Content 1</td>
-                            <td>Content 1</td>
-                            <td><button><MdDelete className='text-3xl' /></button></td>
-                            <td><button><MdEditSquare className='text-3xl' /></button></td>
-                        </tr>
-                        <tr>
-                            <td>Content 1</td>
-                            <td>Content 1</td>
-                            <td>Content 1</td>
-                            <td><button><MdDelete className='text-3xl' /></button></td>
-                            <td><button><MdEditSquare className='text-3xl' /></button></td>
-                        </tr>
-                        <tr>
-                            <td>Content 1</td>
-                            <td>Content 1</td>
-                            <td>Content 1</td>
-                            <td><button><MdDelete className='text-3xl' /></button></td>
-                            <td><button><MdEditSquare className='text-3xl' /></button></td>
-                        </tr>
-                        
+                        {
+                            specialties?.data?.map((specialty:spType) => (
+                                <tr key={specialty._id}>
+                                    <td className='tbl-data'>{specialty._id}</td>
+                                    <td className='tbl-data'>{specialty.name}</td>
+                                    <td className='tbl-data'>{specialty.url}</td>
+                                    <td className='tbl-data'><button><MdDelete className='text-3xl' /></button></td>
+                                </tr>
+                            ))
+                        }
                     </tbody>
                 </table>
             </div>

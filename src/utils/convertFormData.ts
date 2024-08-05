@@ -1,11 +1,12 @@
 
 
+
 const convertFormData = (data:any) => {
     var form_data = new FormData()
-    console.log(data)
+    
     for(var key in data){
         if(key === 'file'){
-            form_data.append(key,data[key]) 
+            form_data.append(key,data[key][0])
         }else{
             form_data.append(key,data[key])
         }

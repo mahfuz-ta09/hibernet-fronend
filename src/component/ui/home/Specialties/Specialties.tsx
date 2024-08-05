@@ -1,16 +1,9 @@
-import Image from 'next/image'
+import Link from 'next/link'
 import '../../../../css/home/Specialties/Specialties.css'
+import ShowSpecialties from './ShowSpecialties'
 
-
-type spType = {
-    icon: string,
-    id: string,
-    title:string
-}
 
 const Specialties = () => {
-    let specialties:any = []
-    
 
     return (
         <div className="specialities-holder">
@@ -19,17 +12,9 @@ const Specialties = () => {
                 <h2>Find your need here</h2>
             </div>
             <div className="specilties-card">
-                {
-                    specialties?.map((specialty: spType) =>(
-                        <div className="card-sp" key={specialty?.id}>
-                            <Image src={specialty?.icon} alt="" />
-                            <h1>{specialty?.title}</h1>
-                        </div>
-                    ))
-                }
-                
+                <ShowSpecialties />
             </div>
-            <button>View All</button>
+            <Link className='sp-navigate' href="/">View All</Link>
         </div>
     )
 }

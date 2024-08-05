@@ -22,18 +22,22 @@ instance.interceptors.request.use(function (config) {
 
 //@ts-ignore
 instance.interceptors.response.use(function (response) {
+
     const responseObject:responseSuccess = {
       data: response?.data?.data,
       meta: response?.data?.meta,
     }
+
     return responseObject
   }, function (error) {
+
     const responseObject:responseError = {
-      statusCode: error?.response?.data?.statusCode || 500,
-      message: error?.response?.data?.message || "something went wrong",
-      errorMessage: error?.response?.data?.message,
+      errorMessage: error?.response.data?.errorMessage,
+      statusCode: error?.response?.data?.statusCode,
+      message: error?.response.data?.message,
     }
-    return responseObject
+
+    return { error: responseObject }
 })
 
 export { instance }

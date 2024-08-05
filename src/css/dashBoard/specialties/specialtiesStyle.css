@@ -3,7 +3,6 @@
     margin: 10vh auto;
 }
 
-
 .page-element{
     display: flex;
     align-items: center;
@@ -30,13 +29,13 @@
 }
 
 
-
 .table-wrapper{
     max-width: 1300px;
     margin: 10px auto;
 }
 
-.fl-table {
+
+.fl-table{
     font-size: 15px;
     border: none;
     width: 100%;
@@ -65,28 +64,25 @@
 }
 
 
-
 .fl-table tbody tr:nth-child(odd){
-    padding: 19px;
     font-weight: 600;
     color: white;
-    text-align: center;
+    text-align: left;
 }
 
-
 .fl-table tbody tr:nth-child(even){
-    padding: 19px;
     font-weight: 600;
     color: black;
-    text-align: center;
+    text-align: left;
     background: rgb(196, 194, 191);
 }
 
+.fl-table tbody tr td{
+    padding: 5px;
+}
 
 
-
-
-@media screen and (max-width:780px) {
+@media screen and (max-width: 780px) {
     .table-wrapper{
         width: 95%;
         overflow-x: auto;
