@@ -7,6 +7,7 @@ import Image from "next/image"
 import convertFormData from "@/utils/convertFormData"
 import { signUpUser } from "@/action/registerUser"
 import { useRouter } from "next/navigation"
+import { toast } from "sonner"
 
 type Inputs = {
     name: string
@@ -27,9 +28,13 @@ const SignUpPage = () => {
         var formData = convertFormData(data)
         try{
             const res = await signUpUser(formData)
-            if(res?.accessToken){
-                localStorage.setItem('accessToken',res?.accessToken)
+
+            if(res?.statusCode === 200){
+                localStorage.setItem('accessToken',res?.meta)
+                toast.success(res?.message)
                 router.push('/')
+            }else{
+                toast.error(res?.message)
             }
         }catch(err:any){
             console.log(err)

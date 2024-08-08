@@ -1,6 +1,4 @@
 import { baseApi } from "@/reduxApp/baseApi"
-import { spType } from "@/types/common";
-
 
 
 const specialtiesApi = baseApi.injectEndpoints({
@@ -13,6 +11,7 @@ const specialtiesApi = baseApi.injectEndpoints({
         contentType : "multipart/form-data",
         data
       }),
+      invalidatesTags: ["specialty"]
     }),
 
     getSpecialties: build.query<any, void>({
@@ -20,22 +19,24 @@ const specialtiesApi = baseApi.injectEndpoints({
         url    : '/specialty/all',
         method : 'GET'
       }),
+      providesTags: ["specialty"]
     }),
 
-    deleteSpecialty: build.mutation<any, void>({
+    deleteSpecialty: build.mutation<any, string>({
       query: (id) =>({
         url    : `/specialty/delete/${id}`,
         method : 'DELETE',
         contentType: ''
       }),
+      invalidatesTags: ["specialty"]
     }),
 
-
   }),
-  overrideExisting: false,
+  overrideExisting: true,
 })
 
 export const { 
     usePostSpecialtiesMutation,
-    useGetSpecialtiesQuery
+    useGetSpecialtiesQuery,
+    useDeleteSpecialtyMutation
 } = specialtiesApi

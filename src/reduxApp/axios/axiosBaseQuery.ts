@@ -25,15 +25,10 @@ export const axiosBaseQuery = ({ baseUrl }: { baseUrl: string } = {
                 params,
                 headers: {
                     "Content-Type": contentType || "application/json",
-                    ...headers
                 },
         })
 
-        if (result.data) {
-            return { data: result?.data }
-        }else{
-            return { error: result?.error }
-        }
+        return  { data: result } 
     } catch (axiosError) {
 
         const err = axiosError as AxiosError

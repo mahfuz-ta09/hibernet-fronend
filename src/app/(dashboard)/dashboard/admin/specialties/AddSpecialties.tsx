@@ -16,6 +16,7 @@ const AddSpecialties = ({ isModalOpen , setIsModalOpen }:any) => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm<Inputs>()
 
@@ -24,11 +25,13 @@ const AddSpecialties = ({ isModalOpen , setIsModalOpen }:any) => {
         const formData = convertFormData(data)
         try{
             const res:any = await postSpecialties(formData)
-            console.log(res)
-            if(res.data){
-                toast.success(res.data.data)
-            }else if(res?.error){
-                toast.error(res?.error?.errorMessage)
+
+            if(res?.data?.data?.acknowledged){
+                toast.success("Successfully added!!!")
+                reset()
+                setIsModalOpen(false)
+            }else{
+                toast.error(res?.data?.errorMessage)
             }
         }catch(err:any){
             console.log("err:",err)

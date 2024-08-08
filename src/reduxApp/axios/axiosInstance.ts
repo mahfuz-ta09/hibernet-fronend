@@ -1,4 +1,5 @@
 import { responseError, responseSuccess } from '@/types/common'
+import { getAccessToken } from '@/utils/jwt/getAccessToken'
 import axios from 'axios'
 
 
@@ -9,7 +10,8 @@ instance.defaults.timeout = 60000
 
 
 instance.interceptors.request.use(function (config) {
-    const accessToken = 'access-token here'
+    const accessToken = getAccessToken()
+
     if(accessToken){
       config.headers.Authorization = accessToken
     }
@@ -20,8 +22,11 @@ instance.interceptors.request.use(function (config) {
     return Promise.reject(error)
 })
 
+
+instance.interceptors.response.use(
 //@ts-ignore
-instance.interceptors.response.use(function (response) {
+
+function (response) {
 
     const responseObject:responseSuccess = {
       data: response?.data?.data,
@@ -29,15 +34,15 @@ instance.interceptors.response.use(function (response) {
     }
 
     return responseObject
-  }, function (error) {
+}, function (error) {
 
     const responseObject:responseError = {
-      errorMessage: error?.response.data?.errorMessage,
-      statusCode: error?.response?.data?.statusCode,
-      message: error?.response.data?.message,
+      errorMessage: error?.response.data?.message,
+      statusCode: error?.response?.data?.statusCode || 500,
+      message: error?.response.data?.message || "something went wrong!!",
     }
 
-    return { error: responseObject }
+    return responseObject
 })
 
 export { instance }

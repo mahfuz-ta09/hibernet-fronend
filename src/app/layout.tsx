@@ -19,7 +19,7 @@ export default function RootLayout({
       <Providers>
         <body>
           {children}
-          <Toaster  position="top-right" richColors/>
+          <Toaster  position="top-center" richColors/>
         </body>
       </Providers>
     </html>

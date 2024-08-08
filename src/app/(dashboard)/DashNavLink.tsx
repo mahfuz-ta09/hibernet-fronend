@@ -14,7 +14,7 @@ const DashNavLink = () => {
     return (
         <div className='dash-nav-body'>
             {
-                sideNavItem(users?.role as Role).map((item,index) =>(
+                sideNavItem(users?.role as Role).map((item,index) => (
                     <Link className={pathname === `${dashTitle}`+item?.path ? 'nav-link active' :'nav-link'} key={index} href={`/dashboard/${item?.path}`}>
                         <item.icon />
                         <span>{item?.title}</span>

@@ -7,6 +7,7 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import convertFormData from '@/utils/convertFormData'
 import { logInUser } from '@/action/registerUser'
 import { useRouter } from 'next/navigation'
+import { toast } from 'sonner'
 
 type Inputs = {
     email: string
@@ -25,15 +26,19 @@ const LoginPage = () => {
 
     const onSubmit: SubmitHandler<Inputs> = async(data) => {
       let formData = convertFormData(data)
-      try{
-        const res = await logInUser(formData)
-        if(res?.accessToken){
-            localStorage.setItem('accessToken',res?.accessToken)
-            router.push('/')
+        try{
+            const res = await logInUser(formData)
+
+            if(res?.statusCode === 200){
+                localStorage.setItem('accessToken',res?.meta)
+                toast.success(res?.message)
+                router.push('/')
+            }else{
+                toast.error(res?.message)
+            }
+        }catch(err:any){
+            console.log(err)
         }
-      }catch(err:any){
-        console.log(err)
-      }
     }
 
     return (
