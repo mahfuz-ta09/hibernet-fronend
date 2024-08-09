@@ -26,7 +26,6 @@ const specialtiesApi = baseApi.injectEndpoints({
       query: (id) =>({
         url    : `/specialty/delete/${id}`,
         method : 'DELETE',
-        contentType: ''
       }),
       invalidatesTags: ["specialty"]
     }),
@@ -34,6 +33,7 @@ const specialtiesApi = baseApi.injectEndpoints({
   }),
   overrideExisting: true,
 })
+
 
 export const { 
     usePostSpecialtiesMutation,

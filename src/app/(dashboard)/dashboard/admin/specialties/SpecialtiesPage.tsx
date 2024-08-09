@@ -7,7 +7,6 @@ import { useDeleteSpecialtyMutation, useGetSpecialtiesQuery } from '@/reduxApp/e
 import { toast } from 'sonner'
 
 
-
 const SpecialtiesPage = () => {
     const [isModalOpen,setIsModalOpen] = useState(false)
     const  { data : specialty }  = useGetSpecialtiesQuery()
