@@ -7,13 +7,13 @@ import { useGetCourseQuery } from '@/reduxApp/endPoints/courses/courseEndpoints'
 const Courses = () => {
     const {data:courses} = useGetCourseQuery()
 
-    
+
     return (
         <div className="courses">
           {
             courses?.data?.map(course => (
                 <div key={course?._id} className="course">
-                  <Image src={course?.image} width={100} height={100} className='course-image' alt="" />
+                  <Image src={course?.image} width={1000} height={1000} className='course-image' alt="" />
                   <div className='course-detail'>
                     <p>{course?.name}</p>
                     <p>total classes: {course?.total_classes}</p>
