@@ -3,14 +3,33 @@ import { useState } from "react"
 import { MdDelete, MdEditSquare } from "react-icons/md"
 import '../../../../../css/dashBoard/specialties/specialtiesStyle.css'
 import AddCourse from "./AddCourse"
-import { useGetCourseQuery } from "@/reduxApp/endPoints/courses/courseEndpoints"
+import { useDeleteCourseMutation, useGetCourseQuery } from "@/reduxApp/endPoints/courses/courseEndpoints"
+import { Hourglass } from "react-loader-spinner"
+import { toast } from "sonner"
+import EditCourseModal from "./EditCourseModal"
 
 
 const CoursesPage = () => {
     const [isModalOpen,setIsModalOpen] = useState(false)
-    const {data:courses} = useGetCourseQuery()
+    const [IsEdisModalOpen,setIsEdisModalOpen] = useState(false)
+    const [editCourseID,setEditCourseID] = useState("")
+    const [editCourseName,setEditCourseName] = useState("")
+    const { data:courses , isLoading } = useGetCourseQuery()
+    const [ deleteCourse ] = useDeleteCourseMutation()
 
+    const handleDelete = async( id: string ) =>{
+        try{
+            const res = await deleteCourse(id)
 
+            if(res?.data?.data?.acknowledged){
+                toast.success("Successfully deleted!!!")
+            }else{
+                toast.error(res?.data?.message)
+            }
+        }catch(err){
+            console.log(err)
+        }
+    }
 
     return (
         <div className='schedule-container'>
@@ -20,7 +39,7 @@ const CoursesPage = () => {
             </div>
 
             <div className="table-wrapper">
-                <table className="fl-table">
+                {!isLoading ? <table className="fl-table">
                     <thead>
                         <tr>
                             <th>Serial</th>
@@ -59,15 +78,37 @@ const CoursesPage = () => {
                                     <td>{course?.total_exams}</td>
                                     <td>{course?.total_enroled}</td>
                                     {/* <td>{course?.image}</td> */}
-                                    <td><button><MdDelete className='text-3xl' /></button></td>
-                                    <td><button><MdEditSquare className='text-3xl' /></button></td>
+                                    <td><button><MdDelete     onClick={()=>handleDelete(course._id)} className='text-3xl' /></button></td>
+                                    <td><button><MdEditSquare onClick={()=>(setIsEdisModalOpen(true),setEditCourseID(course?._id),setEditCourseName(course?.name))} className='text-3xl' /></button></td>
                                 </tr>
                             ))
                         }
 
                     </tbody>
-                </table>
+                </table>: 
+                    (<Hourglass
+                        visible={true}
+                        height="80"
+                        width="80"
+                        ariaLabel="hourglass-loading"
+                        wrapperStyle={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                        }}
+                        wrapperClass="loader-class"
+                        colors={['#fff', '#fff']}
+                    />
+                )}
             </div>
+
+            <EditCourseModal
+                IsEdisModalOpen={IsEdisModalOpen}
+                setIsEdisModalOpen={setIsEdisModalOpen}
+                editCourseName={editCourseName}
+                editCourseID={editCourseID}
+            ></EditCourseModal>
 
             <AddCourse
                 isModalOpen={isModalOpen}

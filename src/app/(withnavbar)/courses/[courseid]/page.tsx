@@ -1,13 +1,12 @@
 'use client'
 import '../../../../css/courses/courseDetails.css'
-import allCourses from '../../../../../public/jsondata/courses.json'
 import { BiBook, BiRightArrow } from 'react-icons/bi'
 import { useGetSingleCourseQuery } from '@/reduxApp/endPoints/courses/courseEndpoints'
 
 
 
 const page = ( { params }: { params :{ courseid : string} }) => {
-    const {data} = useGetSingleCourseQuery(params?.courseid)
+    const {data , isLoading} = useGetSingleCourseQuery(params?.courseid)
 
 
     const handleAddCourseId = () =>{

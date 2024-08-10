@@ -16,3 +16,7 @@
 }
 
 /* background: #343c97; */
+
+.loader-class{
+  position: fixed;
+}

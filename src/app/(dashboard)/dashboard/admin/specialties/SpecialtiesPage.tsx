@@ -5,13 +5,14 @@ import {  useState } from 'react'
 import AddSpecialties from './AddSpecialties'
 import { useDeleteSpecialtyMutation, useGetSpecialtiesQuery } from '@/reduxApp/endPoints/specialties/specialtiesEndpoints'
 import { toast } from 'sonner'
+import { Hourglass } from 'react-loader-spinner'
 
 
 const SpecialtiesPage = () => {
     const [isModalOpen,setIsModalOpen] = useState(false)
-    const  { data : specialty }  = useGetSpecialtiesQuery()
+    const  { data : specialty , isLoading: isGetDataLoading }  = useGetSpecialtiesQuery()
     const [deleteSpecialty , {
-        isLoading,
+        isLoading: isPostLoading,
         isSuccess,
         isError,
         error
@@ -43,7 +44,7 @@ const SpecialtiesPage = () => {
             </div>
 
             <div className="table-wrapper">
-                <table className="fl-table">
+                {!isGetDataLoading  ? <table className="fl-table">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -66,7 +67,22 @@ const SpecialtiesPage = () => {
                             ))
                         }
                     </tbody>
-                </table>
+                </table> 
+                : (<Hourglass
+                        visible={true}
+                        height="80"
+                        width="80"
+                        ariaLabel="hourglass-loading"
+                        wrapperStyle={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                        }}
+                        wrapperClass="loader-class"
+                        colors={['#fff', '#fff']}
+                    />
+                )}
             </div>
             <AddSpecialties
                 isModalOpen={isModalOpen}
