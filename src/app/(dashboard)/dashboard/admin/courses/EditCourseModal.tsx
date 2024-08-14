@@ -52,9 +52,8 @@ const EditCourseModal = ({ IsEdisModalOpen , setIsEdisModalOpen , editCourseID ,
         }
     }
 
-    
 
-    return (    
+    return (
         <div className={IsEdisModalOpen ? "modal-container modalshow" : "modal-container modalhide"}>
         <div className="modal-content">
             <div className="hide-modal">

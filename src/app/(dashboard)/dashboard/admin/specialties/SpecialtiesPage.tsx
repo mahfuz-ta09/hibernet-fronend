@@ -6,6 +6,7 @@ import AddSpecialties from './AddSpecialties'
 import { useDeleteSpecialtyMutation, useGetSpecialtiesQuery } from '@/reduxApp/endPoints/specialties/specialtiesEndpoints'
 import { toast } from 'sonner'
 import { Hourglass } from 'react-loader-spinner'
+import Image from 'next/image'
 
 
 const SpecialtiesPage = () => {
@@ -50,19 +51,19 @@ const SpecialtiesPage = () => {
                             <th>No</th>
                             <th>id</th>
                             <th>name</th>
-                            <th>URL</th>
+                            <th>Image</th>
                             <th>delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             specialty?.data?.map((specialty:any, index:number) => (
-                                <tr key={specialty._id}>
+                                <tr key={specialty?._id}>
                                     <td className='tbl-data'>{index+1}</td>
-                                    <td className='tbl-data'>{specialty._id}</td>
-                                    <td className='tbl-data'>{specialty.name}</td>
-                                    <td className='tbl-data'>{specialty.url}</td>
-                                    <td className='tbl-data'><button><MdDelete onClick={()=>hnadleDelteSp(specialty._id)} className='text-3xl' /></button></td>
+                                    <td className='tbl-data'>{specialty?._id}</td>
+                                    <td className='tbl-data'>{specialty?.name}</td>
+                                    <td className='tbl-data'><Image src={specialty?.url} width={30} height={30} alt=''/></td>
+                                    <td className='tbl-data'><button><MdDelete onClick={()=>hnadleDelteSp(specialty?._id)} className='text-3xl' /></button></td>
                                 </tr>
                             ))
                         }

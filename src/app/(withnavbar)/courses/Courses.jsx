@@ -4,6 +4,7 @@ import '../../../css/courses/courses.css'
 import Link from 'next/link'
 import { useGetCourseQuery } from '@/reduxApp/endPoints/courses/courseEndpoints'
 
+
 const Courses = () => {
     const {data:courses} = useGetCourseQuery()
 
@@ -21,7 +22,7 @@ const Courses = () => {
                     <p>course fee: {course?.course_fee}</p>
                     <div className='course-button'>
                       <Link className='cb-link1' href={`/courses/${course?._id}`}>Details</Link>
-                      <Link className='cb-link2' href={`/courses/${1}`}>Enrol</Link>
+                      <Link className='cb-link2' href={``}>Enrol</Link>
                     </div>
                   </div>
                 </div>

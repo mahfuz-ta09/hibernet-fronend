@@ -7,6 +7,7 @@ import { useDeleteCourseMutation, useGetCourseQuery } from "@/reduxApp/endPoints
 import { Hourglass } from "react-loader-spinner"
 import { toast } from "sonner"
 import EditCourseModal from "./EditCourseModal"
+import Image from "next/image"
 
 
 const CoursesPage = () => {
@@ -55,7 +56,7 @@ const CoursesPage = () => {
                             <th>Classes</th>
                             <th>Exams</th>
                             <th>Enroled</th>
-                            {/* <th>Image</th> */}
+                            <th>Image</th>
                             <th>delete</th>
                             <th>edit</th>
                         </tr>
@@ -77,7 +78,7 @@ const CoursesPage = () => {
                                     <td>{course?.total_classes}</td>
                                     <td>{course?.total_exams}</td>
                                     <td>{course?.total_enroled}</td>
-                                    {/* <td>{course?.image}</td> */}
+                                    <td><Image src={course?.image} width={30} height={30} alt=''/></td>
                                     <td><button><MdDelete     onClick={()=>handleDelete(course._id)} className='text-3xl' /></button></td>
                                     <td><button><MdEditSquare onClick={()=>(setIsEdisModalOpen(true),setEditCourseID(course?._id),setEditCourseName(course?.name))} className='text-3xl' /></button></td>
                                 </tr>

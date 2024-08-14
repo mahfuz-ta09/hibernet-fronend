@@ -119,6 +119,20 @@
 	transition: .3s ease-in-out;
 }
 
+
+.nav-icon-home-btn{
+	position: fixed;
+	z-index: -1;
+	right: 0px;
+	top: 10px;
+	font-size: 45px;
+	transition: .3s ease-in-out;
+}
+
+.nav-icon-home-btn:hover .nav-icon{
+	scale: .8;
+}
+
 .nav-icon-btn:hover .nav-icon{
 	scale: .8;
 }
