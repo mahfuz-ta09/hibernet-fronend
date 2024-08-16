@@ -5,12 +5,14 @@ import { useEnroleCourseMutation, useGetSingleCourseQuery } from '@/reduxApp/end
 import { decodeToken } from '@/utils/jwt/decodeToken'
 import { toast } from 'sonner'
 
+
 type SingleCourseDetailsProps = {
-    id: string;
+    id: string
 }
 
+
 const SingleCourseDetails = ({ id }: SingleCourseDetailsProps) => {
-    const { data , isLoading } = useGetSingleCourseQuery(id)
+    const { data } = useGetSingleCourseQuery(id)
     const tokenData = decodeToken()
     const [ enroleCourse ] = useEnroleCourseMutation()
 
@@ -22,19 +24,19 @@ const SingleCourseDetails = ({ id }: SingleCourseDetailsProps) => {
         }
 
         if(!data.stdID  && !data.stdEmail){
-        toast.error("Please login to access courses")
+            toast.error("Please login to access courses")
         }else{
 
-        try{
-            const res = await enroleCourse({ data , id  })
-            if(res?.data?.data?.acknowledged){
-                toast.success("Successfully enroled...")
-            }else{
-                toast.error(res?.data?.message)
+            try{
+                const res = await enroleCourse({ data , id  })
+                if(res?.data?.data?.acknowledged){
+                    toast.success("Successfully enroled...")
+                }else{
+                    toast.error(res?.data?.message)
+                }
+            }catch(err){
+                console.log(err)
             }
-        }catch(err){
-            console.log(err)
-        }
         }
     }
 
