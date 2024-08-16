@@ -40,13 +40,22 @@ const courseApi = baseApi.injectEndpoints({
         }),
 
         updateCourse: build.mutation<any, { data: any, id: string }>({
-            query: ( {data ,id} ) => ({
+            query: ({ data , id }) => ({
               url         : `/course/update/${id}`,
               method      : "PATCH",
               contentType : "multipart/form-data",
               data
             }),
             invalidatesTags: ["course"]
+        }),
+
+
+        enroleCourse: build.mutation<any, { data: any, id: string }>({
+            query: ({ data , id }) =>({
+                url         : `/course/enrol/${id}`,
+                method      : "POST",
+                data
+            }),
         }),
 
     }),
@@ -57,5 +66,6 @@ export const {
     useGetCourseQuery,
     useCreateCourseMutation,
     useDeleteCourseMutation,
-    useUpdateCourseMutation
+    useUpdateCourseMutation,
+    useEnroleCourseMutation
 } = courseApi

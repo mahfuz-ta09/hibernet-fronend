@@ -34,6 +34,7 @@ export type responseError = {
 export type jwtPayload =  {
     email?:string
     role?:string
+    id?:string
 }
 
 

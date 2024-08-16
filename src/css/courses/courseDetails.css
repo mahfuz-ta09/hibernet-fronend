@@ -23,6 +23,7 @@
     font-family: "Caveat", cursive;
 }
 
+
 .course-details-part{
     border-bottom: .5px solid #343c97;
     width: 80%;
@@ -137,6 +138,11 @@
     filter: drop-shadow(0 10px 0.65rem gray);
 }
 
+.btn-container button:nth-child(1):hover{
+    scale: .9;
+    transition: .2s ease-in-out;
+}
+
 
 .btn-container button:nth-child(2){
     flex: 1;
@@ -150,6 +156,10 @@
     filter: drop-shadow(0 10px 0.65rem gray);
 }
 
+.btn-container button:nth-child(2):hover{
+    scale: .9;
+    transition: .2s ease-in-out;
+}
 
 @media screen and (max-width:510px){
 

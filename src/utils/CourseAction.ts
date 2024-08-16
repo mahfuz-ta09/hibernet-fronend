@@ -22,9 +22,7 @@ export const isAddedToCart = ( id: string ) =>{
     const existingCart = localStorage.getItem('cart');
     let cartItems = existingCart ? JSON.parse(existingCart) : [];
 
-    // Check if the item with the given id exists in the cart
     const itemExists = cartItems.find((item: { _id: string }) => item._id === id);
 
-    console.log(id,"huhu",itemExists)
     return Boolean(itemExists)
 }

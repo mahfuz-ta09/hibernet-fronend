@@ -1,18 +1,43 @@
 'use client'
 import '../../../../css/courses/courseDetails.css'
 import { BiBook, BiRightArrow } from 'react-icons/bi'
-import { useGetSingleCourseQuery } from '@/reduxApp/endPoints/courses/courseEndpoints'
-
+import { useEnroleCourseMutation, useGetSingleCourseQuery } from '@/reduxApp/endPoints/courses/courseEndpoints'
+import { decodeToken } from '@/utils/jwt/decodeToken'
+import { toast } from 'sonner'
 
 
 const page = ( { params }: { params :{ courseid : string} }) => {
-    const {data , isLoading} = useGetSingleCourseQuery(params?.courseid)
+    const { data , isLoading } = useGetSingleCourseQuery(params?.courseid)
+    const tokenData = decodeToken()
+    const [ enroleCourse ] = useEnroleCourseMutation()
 
+
+    const handleEnrole = async (id: string) =>{
+        const data = {
+            stdID: tokenData.id,
+            stdEmail: tokenData.email,
+        }
+  
+        if(!data.stdID  && !data.stdEmail){
+          toast.error("Please login to access courses")
+        }else{
+  
+          try{
+            const res = await enroleCourse({ data , id  })
+            if(res?.data?.data?.acknowledged){
+                toast.success("Successfully enroled...")
+            }else{
+                toast.error(res?.data?.message)
+            }
+          }catch(err){
+            console.log(err)
+          }
+        }
+    }
 
     const handleAddCourseId = () =>{
         // localStorage.setItem("courses",params?.courseid)
     }
-
 
     return (
         <div className='course-details'>
@@ -89,7 +114,7 @@ const page = ( { params }: { params :{ courseid : string} }) => {
                     <p>{data?.data?.description}</p>
                 </div>
                 <div className="btn-container">
-                    <button>Enrol</button>
+                    <button onClick={() => handleEnrole(params?.courseid)}>Enrol</button>
                     <button onClick={handleAddCourseId}>Add to cart</button>
                 </div>
             </div>
