@@ -58,6 +58,11 @@ const sideNavItem = (role : Role) => {
                     path        : `${role}/reviews`,
                     icon        : FaVectorSquare,
                 },
+                {
+                    title       : "Course content",
+                    path        : `${role}/course-content`,
+                    icon        : FaVectorSquare,
+                },
             );
             break;
         case USER_ROLE.STUDENT:

@@ -2,7 +2,7 @@ import { baseApi } from "@/reduxApp/baseApi"
 
 const courseApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
-        
+
         getCourse: build.query<any, void>({
             query: () =>({
                 url    : '/course/all',
@@ -10,8 +10,8 @@ const courseApi = baseApi.injectEndpoints({
             }),
             providesTags: ["course"]
         }),
-  
-        
+
+
         getSingleCourse: build.query<any, string>({
             query: (id:string) =>({
                 url    : `/course/single/${id}`,
@@ -29,6 +29,7 @@ const courseApi = baseApi.injectEndpoints({
           invalidatesTags: ["course"]
         }),
 
+
         createCourse: build.mutation({
             query: (data) => ({
               url         : '/course/create',
@@ -38,6 +39,7 @@ const courseApi = baseApi.injectEndpoints({
             }),
             invalidatesTags: ["course"]
         }),
+
 
         updateCourse: build.mutation<any, { data: any, id: string }>({
             query: ({ data , id }) => ({

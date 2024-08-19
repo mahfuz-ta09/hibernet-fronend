@@ -4,12 +4,10 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { usePostSpecialtiesMutation } from '@/reduxApp/endPoints/specialties/specialtiesEndpoints'
 import { toast } from 'sonner'
 
-
 type Inputs = {
     name : string
     file : string
 }
-  
 
 const AddSpecialties = ({ isModalOpen , setIsModalOpen }:any) => {
     const [postSpecialties ] = usePostSpecialtiesMutation()

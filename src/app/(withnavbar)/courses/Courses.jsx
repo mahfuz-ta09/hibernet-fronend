@@ -1,7 +1,6 @@
 'use client'
 import Image from 'next/image'
 import '../../../css/courses/courses.css'
-import Link from 'next/link'
 import { useEnroleCourseMutation, useGetCourseQuery } from '@/reduxApp/endPoints/courses/courseEndpoints'
 import { toast } from 'sonner'
 import { decodeToken } from '@/utils/jwt/decodeToken'

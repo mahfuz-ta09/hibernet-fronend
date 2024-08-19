@@ -5,11 +5,9 @@ import { useEnroleCourseMutation, useGetSingleCourseQuery } from '@/reduxApp/end
 import { decodeToken } from '@/utils/jwt/decodeToken'
 import { toast } from 'sonner'
 
-
 type SingleCourseDetailsProps = {
     id: string
 }
-
 
 const SingleCourseDetails = ({ id }: SingleCourseDetailsProps) => {
     const { data } = useGetSingleCourseQuery(id)
@@ -26,11 +24,10 @@ const SingleCourseDetails = ({ id }: SingleCourseDetailsProps) => {
         if(!data.stdID  && !data.stdEmail){
             toast.error("Please login to access courses")
         }else{
-
             try{
                 const res = await enroleCourse({ data , id  })
                 if(res?.data?.data?.acknowledged){
-                    toast.success("Successfully enroled...")
+                    toast.success("Successfully enroled.Finish payment.")
                 }else{
                     toast.error(res?.data?.message)
                 }
@@ -40,14 +37,11 @@ const SingleCourseDetails = ({ id }: SingleCourseDetailsProps) => {
         }
     }
 
-    const handleAddCourseId = () =>{
-        // localStorage.setItem("courses",params?.courseid)
-    }
 
     return (
         <div className='course-details'>
             <div className='course-details-container'>
-            
+
                 <h1 className="course-title">{data?.data?.name}</h1>
 
                 <div className="course-details-part">
@@ -120,7 +114,6 @@ const SingleCourseDetails = ({ id }: SingleCourseDetailsProps) => {
                 </div>
                 <div className="btn-container">
                     <button onClick={() => handleEnrole(id)}>Enrol</button>
-                    <button onClick={handleAddCourseId}>Add to cart</button>
                 </div>
             </div>
         </div>
