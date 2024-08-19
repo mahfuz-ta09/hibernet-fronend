@@ -8,6 +8,6 @@ export const baseApi = createApi({
         baseUrl: 'http://localhost:7373/app/v1' ,
         // baseUrl: 'https://hibernet-server.vercel.app/app/v1' 
     }),
-    tagTypes: ["specialty","course"],
+    tagTypes: ["specialty","course","adminControll"],
     endpoints: () => ({}),
 })

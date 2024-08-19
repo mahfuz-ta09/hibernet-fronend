@@ -11,7 +11,7 @@ const createAdminApi = baseApi.injectEndpoints({
                 contentType : "multipart/form-data",
                 data
             }),
-            // invalidatesTags: ["course"]
+            invalidatesTags: ["adminControll"]
         }),
 
         updateAdminStatus: build.mutation({
@@ -19,7 +19,7 @@ const createAdminApi = baseApi.injectEndpoints({
                 url: `/s-admin/update/${status}/${id}`,
                 method: 'PATCH',
             }),
-            // invalidatesTags: ["course"]
+            invalidatesTags: ["adminControll"]
         }),
 
 
@@ -28,7 +28,7 @@ const createAdminApi = baseApi.injectEndpoints({
                 url: '/s-admin/all/admin',
                 method: 'GET'
             }),
-            // invalidatesTags: ["course"]
+            providesTags: ["adminControll"]
         })
     })
 })
