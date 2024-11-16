@@ -1,7 +1,7 @@
 'use server'
 
 export const logInUser = async (formData:FormData) =>{
-    const res = await fetch('http://localhost:7373/app/v1/auth/login',{
+    const res = await fetch('https://hibernet-server.onrender.com/app/v1/auth/login',{
         method: 'POST',
         credentials: 'include',
         body: formData,
@@ -13,7 +13,7 @@ export const logInUser = async (formData:FormData) =>{
 }
 
 export const signUpUser = async (formData:FormData) =>{
-    const res = await fetch('http://localhost:7373/app/v1/auth/signup',{
+    const res = await fetch('https://hibernet-server.onrender.com/app/v1/auth/signup',{
         method: 'POST',
         credentials: 'include',
         body: formData,
