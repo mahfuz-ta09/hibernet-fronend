@@ -119,22 +119,23 @@
         position: absolute;
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
         flex-direction: column;
         background: #343c97;
-        width: 100%;
-        height: 50vh;
+        width: 65%;
+        height: 100vh;
         top: 10vh;
         border-top: 4px solid white;
-        padding: 40px 0;
         transition: left 1s;
-        gap: 15px;
+        gap: 25px;
     }
 
     .link{
         color: white;
         font-size: 18px;
         line-height: 20px;
+        text-align: center;
+        padding: 0 20px;
     }
     
     
