@@ -158,7 +158,7 @@
     
     @keyframes show-navbar {
         from {
-            left: -1000%;
+            left: -100%;
         }
         to {
             left: 0%;
@@ -174,7 +174,7 @@
             left: 0%;
         }
         to {
-            left: -1000%;
+            left: -100%;
         }
     }
 
