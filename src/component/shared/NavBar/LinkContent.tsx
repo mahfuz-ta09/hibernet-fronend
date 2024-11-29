@@ -25,7 +25,7 @@ const LinkContent = () => {
         <>
             {
                 isOpen === true ? 
-                <MdCancel onClick={()=>setIsOpen(!isOpen)} className='nav-btn-icon' />: 
+                <MdCancel onClick={()=>setIsOpen(!isOpen)} className='nav-btn-icon ' />: 
                 <HiMiniBars3BottomRight onClick={()=>setIsOpen(!isOpen)} className='nav-btn-icon' />
             }
             <ul className={isOpen === true ? 'nav-item show' : 'nav-item hide'}>

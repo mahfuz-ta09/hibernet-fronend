@@ -9,7 +9,7 @@ const NavBar = () => {
   return (
     <div className='nav-holder'>
         <div className="nav-content">
-            <Image src="/assets/logo-2.png" width={120} height={0} className='nav-logo nav-tag' priority alt=''/>
+            <Image src="/assets/logo-2.png" width={120} height={120} className='nav-logo nav-tag' priority alt=''/>
             <ServerComponent />
         </div>
     </div>
