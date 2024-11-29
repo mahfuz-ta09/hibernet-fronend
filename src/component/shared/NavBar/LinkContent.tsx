@@ -21,21 +21,25 @@ const LinkContent = () => {
         router.refresh()
     }
 
+    const closeNav = () =>{
+        setIsOpen(!isOpen)
+    }
+
     return (
         <>
             {
                 isOpen === true ? 
-                <MdCancel onClick={()=>setIsOpen(!isOpen)} className='nav-btn-icon ' />: 
+                <MdCancel onClick={()=>setIsOpen(!isOpen)} className='nav-btn-icon' />: 
                 <HiMiniBars3BottomRight onClick={()=>setIsOpen(!isOpen)} className='nav-btn-icon' />
             }
             <ul className={isOpen === true ? 'nav-item show' : 'nav-item hide'}>
-                <Link className='link home-btn' href="/" ><BiSolidHome /></Link>
-                <Link className='link' href="/courses" >Courses</Link>
-                <Link className='link' href="/blogs" >Blogs</Link>
-                <Link className='link' href="/feed" >Feed</Link>
-                <Link className='link' href="/about" >About</Link>
-                <Link className='link' href="/dashboard" >Dashboard</Link>
-                {users?.email ? <button className='logout-btn' onClick={handleLogout}>Logout</button> : <button className='link' onClick={()=>router.push('/login')}>Login</button>}
+                <Link onClick={()=>closeNav()} className='link home-btn' href="/" ><BiSolidHome /></Link>
+                <Link onClick={()=>closeNav()} className='link' href="/courses" >Courses</Link>
+                <Link onClick={()=>closeNav()} className='link' href="/blogs" >Blogs</Link>
+                <Link onClick={()=>closeNav()} className='link' href="/feed" >Feed</Link>
+                <Link onClick={()=>closeNav()} className='link' href="/about" >About</Link>
+                <Link onClick={()=>closeNav()} className='link' href="/dashboard" >Dashboard</Link>
+                {users?.email ? <button className='logout-btn' onClick={handleLogout}>Logout</button> : <button className='link' onClick={()=>{router.push('/login');closeNav()}}>Login</button>}
             </ul>
         </>
     )
