@@ -117,6 +117,7 @@
         font-size: 35px;
         color: white;
         font-weight: 600;
+        z-index: 100;
     }
     .nav-tag{
         font-size: 25px;
@@ -128,10 +129,9 @@
         justify-content: center;
         flex-direction: column;
         background: #343c97;
-        width: 65%;
+        width: 100%;
         height: 100vh;
-        top: 6vh;
-        border-top: 4px solid white;
+        top: 0vh;
         transition: left 1s;
         gap: 25px;
     }
@@ -146,7 +146,7 @@
     
     
     .show {
-        animation: show-navbar 1s forwards;
+        animation: show-navbar .5s forwards;
     }
     
     @keyframes show-navbar {
@@ -159,7 +159,7 @@
     }
     
     .hide {
-        animation: hide-navbar 2s forwards;
+        animation: hide-navbar 1s forwards;
     }
     
     @keyframes hide-navbar {

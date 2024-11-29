@@ -9,8 +9,7 @@ const NavBar = () => {
   return (
     <div className='nav-holder'>
         <div className="nav-content">
-            {/* <h1 className='nav-tag'>Aim way</h1> */}
-            <Image src="/assets/logo-2.png" width={150} height={0} className='nav-logo' priority alt=''/>
+            <Image src="/assets/logo-2.png" width={120} height={0} className='nav-logo nav-tag' priority alt=''/>
             <ServerComponent />
         </div>
     </div>
