@@ -99,9 +99,15 @@
     scale: 1.1;
 }
 
+.nav-logo{
+    z-index: 1000;
+}
 
 
 @media screen and (max-width:750px) {
+    .nav-holder{
+        height: 6vh;
+    }
     .nav-content{
         padding: 0 15px;
         height: 8vh;
@@ -124,7 +130,7 @@
         background: #343c97;
         width: 65%;
         height: 100vh;
-        top: 10vh;
+        top: 6vh;
         border-top: 4px solid white;
         transition: left 1s;
         gap: 25px;

@@ -12,7 +12,7 @@ import { BiSolidHome } from 'react-icons/bi'
 
 
 const LinkContent = () => {
-    const [isOpen,setIsOpen] = useState(true)
+    const [isOpen,setIsOpen] = useState(false)
     const users =  decodeToken()
     const router = useRouter()
 
